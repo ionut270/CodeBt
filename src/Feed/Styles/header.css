@@ -1,0 +1,75 @@
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+body {
+    margin: 0 auto;
+}
+
+#header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #24292e;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.3em;
+    color: white;
+    line-height: 1.5;
+}
+
+#headerLogo {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    margin: 0px;
+    padding-left: .5em;
+    background: #ff5252;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+}
+
+#headerMenu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: .7em;
+}
+.headerUserButton{
+    font-family: 'Barlow', sans-serif;
+    font-size: .7em;
+}
+.headerSigned{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.headerButton {
+    margin-right: 1em;
+    margin-left: 1em;
+    text-align: center;
+}
+.headerButton:hover {
+    font-weight: bold;
+    border-bottom: 1px solid currentColor;
+    line-height: 250%;
+}
+.active{
+    border-bottom: 1px solid #ff5252;
+    line-height: 250%;
+}
+
+.headerUserIconPng {
+    padding-left:1em;
+    padding-right: 1em;
+    border-radius: 100%;
+    width: 1.5em;
+}
+
+
