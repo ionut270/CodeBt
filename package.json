@@ -1,0 +1,20 @@
+{
+  "name": "codebt",
+  "version": "1.0.0",
+  "description": "Folosind datele publice referitoare la incidente de securitate -- preluate, de exemplu, de la Web Application Exploits -- sa se realizeze un sistem capabil sa trimita alerte in timp-real despre noile vulnerabilitati software pentru o clasa de aplicatii (e.g., CMS, framework, modul, biblioteca etc.). Suplimentar, aplicatia va oferi pe baza unui API respectand paradigma REST diverse solutii -- precum sfaturi, rapoarte tehnice, ghiduri de programare defensiva, articole si altele -- vizand prevenirea si/sau eradicarea acestor incidente de securitate. Informatiile oferite vor fi disponibile in formate ca HTML, JSON si Atom. Bonus: recurgerea la un model si implementare publish/subscribe.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionut270/BananaBit.git"
+  },
+  "author": "Oancea Ionut Eugen <ionut.oancea@info.uaic.ro>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ionut270/BananaBit/issues"
+  },
+  "homepage": "https://github.com/ionut270/BananaBit#readme"
+}
