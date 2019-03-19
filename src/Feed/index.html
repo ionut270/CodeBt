@@ -4,7 +4,10 @@
       href="https://fonts.googleapis.com/css?family=Barlow|Teko"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/body.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/filter.css" />
   </head>
   <body>
     <!--Header modular-->
@@ -31,17 +34,19 @@
         </div>
       </div>
     </div>
-
+    <!--Header modular-->
     <!--page body-->
     <div id ="mainBody">
       <div id ="filter">
           <div class="searchBar">
-            <input type="text" placeholder="Search.." name="search" class="searchInput">
-            <button type="submit">
-              <i class="searchButton"></i>
-            </button>
+            <input type="text" placeholder="Search.." name="search" data-query-name="q" value="" class="searchInput">
           </div>
-          <div id="type"><script src="/Footage/event.js"></script></div>
+          <div class = "scroll">
+          <div id="type"><script src="/Footage/filter.js"></script></div>
+          <p class = "feedTitle2">Subscriptions</p>
+          <div class ="line"></div>
+          <div id="subs"><script src="/Footage/subscription.js"></script></div>
+        </div>
       </div>
       <div id="feedList">
 
