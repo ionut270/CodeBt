@@ -23,6 +23,12 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-Type', 'text/css');
         var myReadStream = fs.createReadStream(__dirname + '/src/Feed/Styles/header.css', 'utf8');
         myReadStream.pipe(res);
+    } else
+    if(req.url === "/Footage/event.js"){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/js');
+        var myReadStream = fs.createReadStream(__dirname + '/src/Feed/Footage/event.js', 'utf8');
+        myReadStream.pipe(res);
     }
     //SENDING ENDPOINT FOR FILES **YUCK
     else {
