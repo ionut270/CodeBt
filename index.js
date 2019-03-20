@@ -36,6 +36,12 @@ const server = http.createServer((req, res) => {
         var myReadStream = fs.createReadStream(__dirname + '/src/Feed/Styles/filter.css', 'utf8');
         myReadStream.pipe(res);
     } else
+    if(req.url === "/Styles/feed-Element.css"){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/css');
+        var myReadStream = fs.createReadStream(__dirname + '/src/Feed/Styles/feed-Element.css', 'utf8');
+        myReadStream.pipe(res);
+    } else
     if(req.url === "/Footage/filter.js"){
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/js');
@@ -46,6 +52,18 @@ const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/js');
         var myReadStream = fs.createReadStream(__dirname + '/src/Feed/Footage/subscription.js', 'utf8');
+        myReadStream.pipe(res);
+    } else 
+    if(req.url === "/Footage/feedItemLoad.js"){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/js');
+        var myReadStream = fs.createReadStream(__dirname + '/src/Feed/Footage/feedItemLoad.js', 'utf8');
+        myReadStream.pipe(res);
+    } else
+    if(req.url === "/Footage/headerMenu.js"){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/js');
+        var myReadStream = fs.createReadStream(__dirname + '/src/Feed/Footage/headerMenu.js', 'utf8');
         myReadStream.pipe(res);
     }
     //SENDING ENDPOINT FOR FILES **YUCK

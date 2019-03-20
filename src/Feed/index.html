@@ -4,22 +4,21 @@
       href="https://fonts.googleapis.com/css?family=Barlow|Teko"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="Styles/header.css" />
     <link rel="stylesheet" type="text/css" href="Styles/body.css" />
     <link rel="stylesheet" type="text/css" href="Styles/filter.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/feed-Element.css" />
   </head>
   <body>
     <!--Header modular-->
     <div id="header">
       <p id="headerLogo">codebt</p>
       <div id="headerMenu">
-        <div class="headerButton Active"><a href="/dash">Feed</a></div>
-        <div class="headerButton"><a href="/dash">Dashboard</a></div>
-        <div class="headerButton"><a href="/dash">Security Flaws</a></div>
-        <div class="headerButton"><a href="/dash">Solutions</a></div>
-        <div class="headerButton"><a href="/dash">Forum</a></div>
-        <div class="headerButton"><a href="/dash">Info</a></div>
+          <script src="/Footage/headerMenu.js"></script>
       </div>
       <div class="headerUser">
         <div class="headerSigned">
@@ -27,7 +26,7 @@
           <div class="headerUserIcon">
             <img
               class="headerUserIconPng"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToETKbAEXc0huOEhMInwYH5v-GXZ60u_e7-vJy23ZSmTTpgHh4"
+              src="https://scontent.fias1-1.fna.fbcdn.net/v/t1.0-9/48363109_1982973948438243_5096486795630084096_n.jpg?_nc_cat=101&_nc_ht=scontent.fias1-1.fna&oh=9d9f2c9c56688a2adfa543d554740397&oe=5D0482B6"
             />
             <!--Express provides a nice framework to teach node html servers about file systems, and routes, and streams, and pipes and the rest. Without express you need to teach the html server about your png files, and css, and js, etc, yourself.-->
           </div>
@@ -36,30 +35,36 @@
     </div>
     <!--Header modular-->
     <!--page body-->
-    <div id ="mainBody">
+    <div id="mainBody">
       <!--FILTER AN SHIT SORTOF MODULAR-->
-      <div id ="filter">
-          <div class="searchBar">
-            <input type="text" placeholder="Search.." name="search" data-query-name="q" value="" class="searchInput">
-          </div>
-          <div class = "scroll">
+      <div id="filter">
+        <div class="searchBar">
+          <input
+            type="text"
+            placeholder="Search.."
+            name="search"
+            data-query-name="q"
+            value=""
+            id="searchInput"
+          />
+        </div>
+        <div class="scroll">
           <div id="type"><script src="/Footage/filter.js"></script></div>
-          <p class = "feedTitle2">Subscriptions</p>
-          <div class ="line"></div>
+          <p class="feedTitle2">Subscriptions</p>
+          <div class="line lowerMargin"></div>
           <div id="subs"><script src="/Footage/subscription.js"></script></div>
         </div>
       </div>
       <!--FILTER AN SHIT-->
-
+<div id = "columnFeed">
       <div id="feedList">
-        
-
+        <script src="Footage/feedItemLoad.js"></script>
+        <div class="line lowerMargin2"></div>
       </div>
-      <div id="discover">
-
+    </div>
       </div>
+      <div id="discover"></div>
       <!--/page body-->
-
     </div>
   </body>
 </html>
