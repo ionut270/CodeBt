@@ -31,12 +31,12 @@
         user-select: none;
     }
     .headMenuItem {
-        padding-right: 16px !important;
-        padding-left: 16px !important;
-        padding-bottom: 8px !important;
-        padding-top: 8px !important;
-        margin-bottom: -8px !important;
-        margin-top: -4px !important;
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        margin-bottom: -8px;
+        margin-top: -4px;
         background-color: transparent;
         box-sizing: border-box;
         text-align: -webkit-match-parent;
@@ -149,7 +149,7 @@
         box-sizing: border-box;
         list-style: none;
         color: hsla(0, 0%, 100%, .7);
-        font-size: 14px !important;
+        font-size: 14px;
         line-height: 1.5;
     }
     .contain{
@@ -191,7 +191,7 @@
         box-sizing: border-box;
         list-style: none;
         color: hsla(0, 0%, 100%, .7);
-        font-size: 14px !important;
+        font-size: 14px;
         line-height: 1.5;
     }
     .linem {

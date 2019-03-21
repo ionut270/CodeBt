@@ -2,6 +2,7 @@ const http = require('http'),
     port = 3000,
     feed = require('./Routes/feed.js'),
     itemPage = require('./Routes/itemPage.js'),
+    profile = require('./Routes/profile.js'),
     fs = require('fs'),
     events = require('events'),
     util = require('util');
@@ -20,6 +21,9 @@ const server = http.createServer((req, res) => {
     }else 
     if(req.url === "/itemPage"){
         itemPage.itemPage(req, res);
+    }else 
+    if(req.url === "/profile"){
+        profile.profile(req, res);
     }else 
     //SENDING ENDPOINT FOR FILES **YUCK
     if(req.url === "/Styles/header.css"){
@@ -80,6 +84,12 @@ const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/css');
         var myReadStream = fs.createReadStream(__dirname + '/src/itemPage/Styles/itemElement.css', 'utf8');
+        myReadStream.pipe(res);
+    } else 
+    if(req.url === "/Styles/profile.css"){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/css');
+        var myReadStream = fs.createReadStream(__dirname + '/src/Profile/Styles/profile.css', 'utf8');
         myReadStream.pipe(res);
     }
     //SENDING ENDPOINT FOR FILES **YUCK
