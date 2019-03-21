@@ -2,26 +2,6 @@ var page = [
   {
     name: "Feed",
     url: "/feed"
-  },
-  {
-    name: "Dashboard",
-    url: "/dash"
-  },
-  {
-    name: "Security Flaws",
-    url: "/dash"
-  },
-  {
-    name: "Solutions",
-    url: "/dash"
-  },
-  {
-    name: "Forum",
-    url: "/dash"
-  },
-  {
-    name: "Info",
-    url: "/dash"
   }
 ];
 var user = {

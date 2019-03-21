@@ -5,15 +5,25 @@ var active = false;
 function change_filter() {
     const mq = window.matchMedia("(orientation: portrait)");
     if (mq.matches === true) {
-        console.log("click")
-        if (active === false) {
-            document.getElementById("filter").style.display = "block";
+        if (document.getElementById("filter") === null) {
+            if (active === false) {
+            document.getElementById("section2").style.display = "block";
             active = true;
+            } else {
+                document.getElementById("section2").style.display = "none";
+                active = false;
+            }
         } else {
-            active = false;
-            document.getElementById("filter").style.display = "none";
+            console.log("click")
+            if (active === false) {
+                document.getElementById("filter").style.display = "block";
+                active = true;
+            } else {
+                active = false;
+                document.getElementById("filter").style.display = "none";
+            }
         }
-    } else{
+    } else {
         active = false;
         activeHead = false;
         profile = false;
@@ -25,8 +35,9 @@ function changeHeaderMenu() {
         console.log("header");
 
         active = false;
-
+        if(document.getElementById("filter")!=null){
         document.getElementById("filter").style.display = "none";
+        }
         if (profile === false) {
             if (activeHead === false) {
                 document.getElementById("headerMenu").style.display = "block";
@@ -38,7 +49,7 @@ function changeHeaderMenu() {
                 activeHead = false;
             }
         }
-    } else{
+    } else {
         active = false;
         activeHead = false;
         profile = false;
@@ -67,4 +78,4 @@ function userProfileTrigger() {
 
 function myFunction(x) {
     x.classList.toggle("change");
-  }
+}

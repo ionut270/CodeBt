@@ -1,6 +1,7 @@
 const http = require('http'),
     port = 3000,
     feed = require('./Routes/feed.js'),
+    itemPage = require('./Routes/itemPage.js'),
     fs = require('fs'),
     events = require('events'),
     util = require('util');
@@ -16,6 +17,9 @@ const server = http.createServer((req, res) => {
     } else 
     if(req.url === "/feed"){
         feed.feed(req, res);
+    }else 
+    if(req.url === "/itemPage"){
+        itemPage.itemPage(req, res);
     }else 
     //SENDING ENDPOINT FOR FILES **YUCK
     if(req.url === "/Styles/header.css"){
@@ -70,6 +74,12 @@ const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/js');
         var myReadStream = fs.createReadStream(__dirname + '/src/Feed/Footage/css.js', 'utf8');
+        myReadStream.pipe(res);
+    } else 
+    if(req.url === "/Styles/itemElement.css"){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/css');
+        var myReadStream = fs.createReadStream(__dirname + '/src/itemPage/Styles/itemElement.css', 'utf8');
         myReadStream.pipe(res);
     }
     //SENDING ENDPOINT FOR FILES **YUCK

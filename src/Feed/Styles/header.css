@@ -238,6 +238,7 @@
         user-select: none;
     }
     .contain {
+        min-height: 19em;
         display:none;
         position: fixed;
         left: 0;

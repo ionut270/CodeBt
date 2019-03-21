@@ -6,6 +6,7 @@ var item = [
     type: "Remote	",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46572"
+    ,status: "Not fixed"
   },
   {
     platform: "Multiple",
@@ -14,6 +15,7 @@ var item = [
     type: "DoS",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46571"
+    ,status: "Not fixed"
   },
   {
     platform: "Multiple",
@@ -21,6 +23,7 @@ var item = [
     type: "DoS",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46570"
+    ,status: "Not fixed"
   },
   {
     platform: "Windows",
@@ -29,6 +32,7 @@ var item = [
     type: "DoS",
     date: "2019-03-18",
     source: "https://www.exploit-db.com/exploits/46569"
+    ,status: "Not fixed"
   },
   {
     platform: "Linux",
@@ -37,6 +41,7 @@ var item = [
     type: "DoS",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46564"
+    ,status: "Not fixed"
   },
   {
     platform: "Linux",
@@ -45,6 +50,7 @@ var item = [
     type: "DoS",
     date: "2019-03-11",
     source: "https://www.exploit-db.com/exploits/46529"
+    ,status: "Not fixed"
   },
   {
     platform: "Linux",
@@ -53,6 +59,7 @@ var item = [
     type: "DoS",
     date: "2019-03-06",
     source: "https://www.exploit-db.com/exploits/46502"
+    ,status: "Not fixed"
   },
   {
     platform: "JSON",
@@ -60,6 +67,7 @@ var item = [
     type: "WebApps	",
     date: "2018-11-05",
     source: "https://www.exploit-db.com/exploits/45783"
+    ,status: "Not fixed"
   },
   {
     platform: "JSON",
@@ -68,6 +76,7 @@ var item = [
     type: "WebApps",
     date: "2018-04-09",
     source: "https://www.exploit-db.com/exploits/44429"
+    ,status: "Not fixed"
   },
   {
     platform: "Unix",
@@ -75,6 +84,7 @@ var item = [
     type: "Local",
     date: "2018-12-04",
     source: "https://www.exploit-db.com/exploits/45953"
+    ,status: "Not fixed"
   },
   {
     platform: "Java",
@@ -83,6 +93,7 @@ var item = [
     type: "Remote	",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46572"
+    ,status: "Not fixed"
   },
   {
     platform: "Multiple",
@@ -91,6 +102,7 @@ var item = [
     type: "DoS",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46571"
+    ,status: "Not fixed"
   },
   {
     platform: "Multiple",
@@ -98,6 +110,7 @@ var item = [
     type: "DoS",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46570"
+    ,status: "Not fixed"
   },
   {
     platform: "Windows",
@@ -106,6 +119,7 @@ var item = [
     type: "DoS",
     date: "2019-03-18",
     source: "https://www.exploit-db.com/exploits/46569"
+    ,status: "Not fixed"
   },
   {
     platform: "Linux",
@@ -114,6 +128,7 @@ var item = [
     type: "DoS",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46564"
+    ,status: "Not fixed"
   },
   {
     platform: "Linux",
@@ -122,6 +137,7 @@ var item = [
     type: "DoS",
     date: "2019-03-11",
     source: "https://www.exploit-db.com/exploits/46529"
+    ,status: "Not fixed"
   },
   {
     platform: "Linux",
@@ -130,6 +146,7 @@ var item = [
     type: "DoS",
     date: "2019-03-06",
     source: "https://www.exploit-db.com/exploits/46502"
+    ,status: "Not fixed"
   },
   {
     platform: "JSON",
@@ -137,6 +154,7 @@ var item = [
     type: "WebApps	",
     date: "2018-11-05",
     source: "https://www.exploit-db.com/exploits/45783"
+    ,status: "Not fixed"
   },
   {
     platform: "JSON",
@@ -145,6 +163,7 @@ var item = [
     type: "WebApps",
     date: "2018-04-09",
     source: "https://www.exploit-db.com/exploits/44429"
+    ,status: "Not fixed"
   },
   {
     platform: "Unix",
@@ -152,6 +171,7 @@ var item = [
     type: "Local",
     date: "2018-12-04",
     source: "https://www.exploit-db.com/exploits/45953"
+    ,status: "Not fixed"
   },
   {
     platform: "Java",
@@ -160,6 +180,7 @@ var item = [
     type: "Remote	",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46572"
+    ,status: "Not fixed"
   },
   {
     platform: "Multiple",
@@ -168,6 +189,7 @@ var item = [
     type: "DoS",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46571"
+    ,status: "Not fixed"
   },
   {
     platform: "Multiple",
@@ -175,6 +197,7 @@ var item = [
     type: "DoS",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46570"
+    ,status: "Not fixed"
   },
   {
     platform: "Windows",
@@ -183,6 +206,7 @@ var item = [
     type: "DoS",
     date: "2019-03-18",
     source: "https://www.exploit-db.com/exploits/46569"
+    ,status: "Not fixed"
   },
   {
     platform: "Linux",
@@ -191,6 +215,7 @@ var item = [
     type: "DoS",
     date: "2019-03-19",
     source: "https://www.exploit-db.com/exploits/46564"
+    ,status: "Not fixed"
   },
   {
     platform: "Linux",
@@ -199,6 +224,7 @@ var item = [
     type: "DoS",
     date: "2019-03-11",
     source: "https://www.exploit-db.com/exploits/46529"
+    ,status: "Not fixed"
   },
   {
     platform: "Linux",
@@ -207,6 +233,7 @@ var item = [
     type: "DoS",
     date: "2019-03-06",
     source: "https://www.exploit-db.com/exploits/46502"
+    ,status: "Not fixed"
   },
   {
     platform: "JSON",
@@ -214,6 +241,7 @@ var item = [
     type: "WebApps	",
     date: "2018-11-05",
     source: "https://www.exploit-db.com/exploits/45783"
+    ,status: "Not fixed"
   },
   {
     platform: "JSON",
@@ -222,6 +250,7 @@ var item = [
     type: "WebApps",
     date: "2018-04-09",
     source: "https://www.exploit-db.com/exploits/44429"
+    ,status: "Not fixed"
   },
   {
     platform: "Unix",
@@ -229,21 +258,23 @@ var item = [
     type: "Local",
     date: "2018-12-04",
     source: "https://www.exploit-db.com/exploits/45953"
+    ,status: "Not fixed"
   }
 ];
 
 var txt = "";
 for (x in item) {
-  txt += '<div class="feedItem">';
+  txt += '<div class="feedItem" >';
   txt += '<div class="generic">';
   txt += '<p class="feedItemPlatform">' + item[x].platform + "</p>";
   txt += "<a href=" + item[x].source + '" class="source">Source</a>';
   txt += "</div>";
   txt += '<div class="line"></div>';
-  txt += '<p class="feedItemDescription">' + item[x].description + "</p>";
+  txt += '<a href="/itemPage" class="feedItemDescription">' + item[x].description + "</a>";
   txt += '<div class="generic">';
   txt += '<p class="feedItemType">' + item[x].type + "</p>";
   txt += '<p class="feedItemDate">Date: ' + item[x].date + "</p>";
+  txt += '<p class="feedItemDate">Status: ' + item[x].status + "</p>";
   txt += "</div>";
   txt += "</div>";
 }
