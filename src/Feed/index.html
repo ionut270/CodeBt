@@ -1,70 +1,87 @@
 <html>
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css?family=Barlow|Teko"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="Styles/header.css" />
-    <link rel="stylesheet" type="text/css" href="Styles/body.css" />
-    <link rel="stylesheet" type="text/css" href="Styles/filter.css" />
-    <link rel="stylesheet" type="text/css" href="Styles/feed-Element.css" />
-  </head>
-  <body>
-    <!--Header modular-->
-    <div id="header">
-      <p id="headerLogo">codebt</p>
-      <div id="headerMenu">
-          <script src="/Footage/headerMenu.js"></script>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Barlow|Teko" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="Styles/header.css" />
+  <link rel="stylesheet" type="text/css" href="Styles/body.css" />
+  <link rel="stylesheet" type="text/css" href="Styles/filter.css" />
+  <link rel="stylesheet" type="text/css" href="Styles/feed-Element.css" />
+  <script src="/Footage/css.js"></script>
+</head>
+
+<body>
+  <!--Header modular-->
+  <div id="header" onclick="changeHeaderMenu();">
+    <p id="headerLogo">codebt</p>
+
+
+    <div id="headerMenu" class="contain">
+      <script src="/Footage/headerMenu.js"></script>
+    </div>
+    <div id="headerUserContain" class="headerUser contain2">
+      <div class="headerSigned">
+        <div class="headerUserIcon">
+          <div class="special_menu" id="menuUser">
+            <div class="headerUsername headMenuItem">
+              <p class="blackMobile">Signed in as ionut270</p>
+            </div>
+            <div role="none" class="dropdown-divider"></div>
+            <div class="headerProfile headMenuItem"><a class="blackLink" href="/profile">Your profile</a></div>
+            <div class="headerUserDashboard headMenuItem"><a class="blackLink" href="/dash">Your dashboard</a></div>
+            <div class="headerUserHelp headMenuItem"><a class="blackLink" href="/dash">Help</a></div>
+            <div role="none" class="dropdown-divider"></div>
+            <div class="headerUserLogout headMenuItem"><a class="blackLink" href="/dash">Logout</a></div>
+          </div>
+          <img onclick="userProfileTrigger();" class="headerUserIconPng"
+            src="https://scontent.fias1-1.fna.fbcdn.net/v/t1.0-9/48363109_1982973948438243_5096486795630084096_n.jpg?_nc_cat=101&_nc_ht=scontent.fias1-1.fna&oh=9d9f2c9c56688a2adfa543d554740397&oe=5D0482B6" />
+          <div class="triangle"></div>
+          <!--Express provides a nice framework to teach node html servers about file systems, and routes, and streams, and pipes and the rest. Without express you need to teach the html server about your png files, and css, and js, etc, yourself.-->
+        </div>
       </div>
-      <div class="headerUser">
-        <div class="headerSigned">
-          <div class="headerUserButton"><a href="/dash">Logout</a></div>
-          <div class="headerUserIcon">
-            <img
-              class="headerUserIconPng"
-              src="https://scontent.fias1-1.fna.fbcdn.net/v/t1.0-9/48363109_1982973948438243_5096486795630084096_n.jpg?_nc_cat=101&_nc_ht=scontent.fias1-1.fna&oh=9d9f2c9c56688a2adfa543d554740397&oe=5D0482B6"
-            />
-            <!--Express provides a nice framework to teach node html servers about file systems, and routes, and streams, and pipes and the rest. Without express you need to teach the html server about your png files, and css, and js, etc, yourself.-->
+    </div>
+  </div>
+  <!--Header modular-->
+  <!--MobileHeader/footer o.o-->
+
+  <!--page body-->
+  <div id="mainBody">
+    <!--FILTER AN SHIT SORTOF MODULAR-->
+    <div id="selectFilter" class="mobileSelect" >
+
+      <div class="containers" onclick="change_filter(); myFunction(this);">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+
+      <div id="filter">
+        <div class="searchBar">
+          <input type="text" placeholder="Search.." name="search" data-query-name="q" value="" id="searchInput" />
+        </div>
+        <div class="scroll">
+          <div id="type">
+            <script src="/Footage/filter.js"></script>
+          </div>
+          <p class="feedTitle2">Subscriptions</p>
+          <div class="line lowerMargin"></div>
+          <div id="subs">
+            <script src="/Footage/subscription.js"></script>
           </div>
         </div>
       </div>
     </div>
-    <!--Header modular-->
-    <!--page body-->
-    <div id="mainBody">
-      <!--FILTER AN SHIT SORTOF MODULAR-->
-      <div id="filter">
-        <div class="searchBar">
-          <input
-            type="text"
-            placeholder="Search.."
-            name="search"
-            data-query-name="q"
-            value=""
-            id="searchInput"
-          />
-        </div>
-        <div class="scroll">
-          <div id="type"><script src="/Footage/filter.js"></script></div>
-          <p class="feedTitle2">Subscriptions</p>
-          <div class="line lowerMargin"></div>
-          <div id="subs"><script src="/Footage/subscription.js"></script></div>
-        </div>
-      </div>
-      <!--FILTER AN SHIT-->
-<div id = "columnFeed">
+    <!--FILTER AN SHIT-->
+    <div id="columnFeed">
       <div id="feedList">
         <script src="Footage/feedItemLoad.js"></script>
         <div class="line lowerMargin2"></div>
       </div>
     </div>
-      </div>
-      <div id="discover"></div>
-      <!--/page body-->
-    </div>
-  </body>
+  </div>
+  <div id="discover"></div>
+  <!--/page body-->
+  </div>
+</body>
+
 </html>

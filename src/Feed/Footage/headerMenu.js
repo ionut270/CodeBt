@@ -48,5 +48,6 @@ for (x in page) {
     '">' +
     page[x].name +
     "</a></div>";
+    txt+='<div role="none" class="dropdown-divider"></div>';
 }
 document.getElementById("headerMenu").innerHTML = txt;
