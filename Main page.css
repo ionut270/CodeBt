@@ -13,7 +13,7 @@ html, body{
 
 .loginbox{
 	width: 320px;
-	height: 420px;
+	height: 600px;
 	background: #000;
 	color: #fff;
 	top: 50%;
@@ -86,17 +86,21 @@ h1{
 .loginbox a:hover{
 	color: #0099ff;
 }
+.loginbox select option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    color: rgb(230, 40, 40);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
 
-
-
-
-
-
-
-
-
-
-
+select{
+	display:flex;
+	margin:0 auto;
+	width:90%;
+	margin-top:.5em;
+	margin-bottom:.5em;
+	padding:.5em;
+}
 
 
 
