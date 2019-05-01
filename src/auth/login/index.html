@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>
+            console.log("Running!");
+            fetch("/test")
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(myJson) {
+                    console.log("did not ... Worked!");
+                    console.log(JSON.stringify(myJson));
+                });
+        </script>
+    </head>
+    <body>
+        <h1>LOGIN</h1>
+        <form method="POST" name="LOGIN">
+            username:<br />
+            <input type="text" name="username" />
+            <br />
+            password:<br />
+            <input type="password" name="password" />
+            <br /><br />
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>

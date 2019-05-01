@@ -1,0 +1,273 @@
+@media (orientation: landscape) {
+    .scroll::-webkit-scrollbar {
+        width: .1em;
+    }
+    .scroll::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    .scroll::-webkit-scrollbar-thumb {
+        background-color: #ff5252;
+        outline: 1px solid slategrey;
+    }
+    .searchBar {
+        margin-top: 20px;
+    }
+    #filter {
+        background-color: #fff;
+        position: fixed;
+        width: 15em;
+        height: 100%;
+        margin: 0;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        border-bottom: 1px solid #e1e4e8;
+        border-right: 1px solid #e1e4e8;
+    }
+    .feedTitle {
+        margin-top: 0px;
+        padding-top: 20px;
+        margin-bottom: 10px;
+    }
+    .feedTitle2 {
+        text-align: left;
+        margin-left: 2em;
+        margin-top: 1em;
+        padding-top: 10px;
+        margin-bottom: 8px;
+    }
+    .scroll {
+        max-height: 90%;
+        overflow-y: scroll;
+    }
+    .icoNested {
+        padding-left: 24px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-flow: row;
+        align-content: center;
+        align-items: center;
+    }
+    .bookmark {
+        width: 16px;
+        height: 16px;
+        padding-right: 10px;
+    }
+    .line {
+        margin-top: .5em;
+        margin-left: 0;
+        border-bottom: .06em dotted #24292e;
+        width: 100%;
+    }
+    .lowerMargin {
+        margin-bottom: 1em;
+    }
+    .lowerMargin2 {
+        margin-bottom: 5em;
+    }
+    .space {
+        padding-top: 1em;
+    }
+    #searchInput {
+        background-color: #fff;
+        background-position: right 8px center;
+        background-repeat: no-repeat;
+        border: 1px solid #d1d5da;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 2px rgba(27, 31, 35, .075);
+        color: #24292e;
+        font-size: 16px;
+        line-height: 20px;
+        min-height: 34px;
+        outline: none;
+        padding: 6px 12px;
+        vertical-align: middle;
+        overflow: visible;
+        font-size: 14px;
+        margin-bottom: 16px;
+        cursor: text;
+        text-rendering: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        text-align: start;
+    }
+    .searchInput:hover {
+        border: 1px solid #ff5252;
+    }
+    .className {
+        color: #24292e;
+        max-width: 125px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.5;
+        cursor: pointer;
+        overflow: hidden;
+        line-height: 250%;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .className:hover {
+        color: #ff5252;
+    }
+    .feedClass {
+        font-size: .8em;
+        border-bottom: 1px solid #ff5252;
+        line-height: 250%;
+    }
+}
+
+@media (orientation: portrait) {
+    .scroll::-webkit-scrollbar {
+        width: .1em;
+    }
+    .scroll::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    .scroll::-webkit-scrollbar-thumb {
+        background-color: #ff5252;
+        outline: 1px solid slategrey;
+    }
+    .searchBar {
+        margin-top: 20px;
+    }
+    #filter {
+        display:none;
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0 ;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        border-bottom: 1px solid #e1e4e8;
+        border-right: 1px solid #e1e4e8;
+        left: 0;
+    }
+    .feedTitle {
+        margin-top: 0px;
+        padding-top: 20px;
+        margin-bottom: 10px;
+    }
+    .feedTitle2 {
+        font-size: 3em;
+        text-align: left;
+        margin-left: 1em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .scroll {
+        max-height: 90%;
+        overflow-y: scroll;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    .icoNested {
+        padding-left: 24px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-flow: row;
+        align-content: center;
+        align-items: center;
+    }
+    .bookmark {
+        width: 3em;
+        height: 3em;
+        padding-top: 1em;
+        padding-right: 2em;
+    }
+    .line {
+        margin-top: .5em;
+        margin-left: 0;
+        border-bottom: .06em dotted #24292e;
+        width: 100%;
+    }
+    .lowerMargin {
+        margin-bottom: 1em;
+    }
+    .lowerMargin2 {
+        margin-bottom: 5em;
+    }
+    .space {
+        padding-top: 1em;
+    }
+    #searchInput {
+        background-color: #fff;
+        background-position: right 8px center;
+        background-repeat: no-repeat;
+        border: 1px solid #d1d5da;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 2px rgba(27, 31, 35, .075);
+        color: #24292e;
+        line-height: 2em;
+        min-height: 2em;
+        max-width: 11em;
+        outline: none;
+        padding: .1em .5em;
+        vertical-align: middle;
+        overflow: visible;
+        font-size: 3em;
+        margin-bottom: .4em;
+        margin-top: .4em;
+        cursor: text;
+        text-rendering: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        text-align: start;
+    }
+    .searchInput:hover {
+        border: 1px solid #ff5252;
+    }
+    .className {
+        color: #24292e;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.5;
+        cursor: pointer;
+        overflow: hidden;
+        line-height: 250%;
+        font-weight: 400;
+        font-size: 3em;
+    }
+    .feedClass {
+        font-size: .8em;
+        border-bottom: 1px solid #ff5252;
+        line-height: 250%;
+    }
+
+
+    .containers {
+        position: fixed;
+        top: 2.5vw;
+        left: 2vw;
+      }
+      
+      .bar1, .bar2, .bar3 {
+        width: 10vw;
+        height: 1.3vw;
+        background-color: #ff5252;
+        margin-bottom: 1em;
+        transition: 0.4s;
+      }
+      
+      .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-2vw, 2vw);
+        transform: rotate(-45deg) translate(-2vw, 2vw);
+      }
+      
+      .change .bar2 {opacity: 0;}
+      
+      .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-2vw, -2vw);
+        transform: rotate(45deg) translate(-2vw, -2vw);
+      }
+}

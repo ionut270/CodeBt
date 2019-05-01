@@ -1,0 +1,22 @@
+.mainBody{
+    position: fixed;
+    background-color: #fff6f8;
+    height: 100%;
+    width:100%;
+    display:flex;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+}
+#mainBody::-webkit-scrollbar {
+    width: .5em;
+}
+
+#mainBody::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#mainBody::-webkit-scrollbar-thumb {
+    background-color: #ff5252;
+    outline: 1px solid slategrey;
+}
