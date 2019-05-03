@@ -1,16 +1,26 @@
 {
-  "name": "codebt",
+  "name": "codebt-web-scrapper",
   "version": "1.0.0",
-  "description": "Folosind datele publice referitoare la incidente de securitate -- preluate, de exemplu, de la Web Application Exploits -- sa se realizeze un sistem capabil sa trimita alerte in timp-real despre noile vulnerabilitati software pentru o clasa de aplicatii (e.g., CMS, framework, modul, biblioteca etc.). Suplimentar, aplicatia va oferi pe baza unui API respectand paradigma REST diverse solutii -- precum sfaturi, rapoarte tehnice, ghiduri de programare defensiva, articole si altele -- vizand prevenirea si/sau eradicarea acestor incidente de securitate. Informatiile oferite vor fi disponibile in formate ca HTML, JSON si Atom. Bonus: recurgerea la un model si implementare publish/subscribe.",
+  "description": "A simple web scrapper that uses pupeteer to controll and mawebsite data",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "debug": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ionut270/BananaBit.git"
   },
+  "keywords": [
+    "code",
+    "bt",
+    "codebt",
+    "oancea",
+    "ionut",
+    "eugen",
+    "ionut270"
+  ],
   "author": "Oancea Ionut Eugen <ionut.oancea@info.uaic.ro>",
   "license": "ISC",
   "bugs": {
@@ -18,12 +28,8 @@
   },
   "homepage": "https://github.com/ionut270/BananaBit#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
+    "firebase-admin": "^7.3.0",
     "node-html-parser": "^1.1.15",
-    "nodemon": "^1.18.11",
-    "puppeteer": "^1.14.0",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
-    "firebase-admin": "^7.2.0"
+    "puppeteer": "^1.15.0"
   }
 }
