@@ -40,10 +40,12 @@ function changeHeaderMenu() {
         }
         if (profile === false) {
             if (activeHead === false) {
+                document.getElementById ("blackout").style.display  ="block";
                 document.getElementById("headerMenu").style.display = "block";
                 document.getElementById("headerUserContain").style.display = "block";
                 activeHead = true;
             } else {
+                document.getElementById ("blackout").style.display  ="none";
                 document.getElementById("headerMenu").style.display = "none";
                 document.getElementById("headerUserContain").style.display = "none";
                 activeHead = false;

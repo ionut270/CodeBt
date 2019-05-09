@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
   } else if (req.url === "/feed") {
     console.log("feed!");
     feed.feed(req, res);
-  } else if (req.url === "/itemPage") {
+  } else if (req.url.indexOf("/item/") != -1) {
     itemPage.itemPage(req, res);
   } else if (req.url.indexOf("/profile/") != -1) {
     profile.profile(req, res);

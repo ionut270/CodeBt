@@ -1,27 +1,27 @@
-<div class="special_menu" id="menuUser">
-        <div class="headerUsername headMenuItem">
+<div class="special_menu "id = "menuUser">
+        <div class="headerUsername">
             <p class="blackMobile">
-                Signed in as ionut270
+                {{LOGGEDUSERNAME}}
             </p>
         </div>
         <div role="none" class="dropdown-divider"></div>
-        <div class="headerProfile headMenuItem">
-            <a class="blackLink" href="/profile"
-                >Your profile</a
+        <a class="blackLink" onclick='window.location="{{PROFILEURL}}"'>
+            <div class="headerProfile headMenuItem "
+                >{{LOGGEDMSG}}</div
             >
-        </div>
-        <div class="headerUserDashboard headMenuItem">
-            <a class="blackLink" href="/dash"
-                >Your dashboard</a
+        </a>
+        <a class="blackLink" href="/dash">
+            <div class="headerUserDashboard headMenuItem" 
+                >{{DASHBOARD}}</div
             >
-        </div>
-        <div class="headerUserHelp headMenuItem">
-            <a class="blackLink" href="/dash">Help</a>
-        </div>
+        </a>
+        <a class="blackLink" href="/dash">
+            <div class="headerUserHelp headMenuItem ">Help</div>
+        </a>
         <div role="none" class="dropdown-divider"></div>
-        <a class="blackLink" href="/login">
+        <a class="blackLink" href="/GET/logout">
             <div class="headerUserLogout headMenuItem">
-                Logout
+                {{AUTH}}
             </div>
         </a>
     </div>

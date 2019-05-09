@@ -67,7 +67,7 @@
     border-bottom-right-radius: 0px !important;
   }
   .main.left {
-    padding-right: 16px !important;
+    padding-right: 1vw !important;
     float: left !important;
   }
   .button.icon.center.edit {
@@ -105,6 +105,7 @@
     box-sizing: border-box;
     content: "";
     display: table;
+    margin-bottom: 7.875em;
   }
   .tab {
     float: left !important;
@@ -121,6 +122,7 @@
     align-items: center;
     justify-content: left;
     font-family: "Roboto", sans-serif;
+    padding-top: 1em;
   }
   #SUBSCRIBERS {
     padding: 16px !important;
@@ -267,6 +269,7 @@
     max-width: 1012px;
     box-sizing: border-box;
     content: "";
+    margin-bottom: 7.875em;
   }
   .tab {
     margin-top: 5vw;
@@ -284,6 +287,7 @@
     align-items: center;
     justify-content: left;
     font-family: "Roboto", sans-serif;
+    padding-top: 1em;
   }
   #SUBSCRIBERS {
     padding: 16px !important;
@@ -310,4 +314,7 @@
     font-size: 5vw !important;
     margin-bottom: 2vw !important;
   }
+}
+.profileBody{
+  margin:0 auto;
 }

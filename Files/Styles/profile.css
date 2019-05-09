@@ -1,4 +1,6 @@
+
 @media (orientation: landscape) {
+    
     .profilePic {
         width: 12em;
         height: 12em;
@@ -32,8 +34,8 @@
     .bookmark {
         width: 2em;
         height: 2em;
-        padding-top: 1em;
         padding-right: 2em;
+        object-fit: contain !important;
     }
 
     #subs {
@@ -110,8 +112,8 @@
     .bookmark {
         width: 2em;
         height: 2em;
-        padding-top: 1em;
         padding-right: 2em;
+        object-fit: contain !important;
     }
 
     #subs {

@@ -8,6 +8,7 @@ function validate(key) {
 //console.log("KEY RECIEVED:",key.split(/{{/)[1].split(/}}/)[0] )
   console.log("\tvalidate-key.js : ***********VALIDATE**********");
   //userData = auth.getData();
+  console.log("Key is :",key)
   if (key === undefined) {
     console.log("\tThere is not cookie session id but validate was launched!");
     return false;

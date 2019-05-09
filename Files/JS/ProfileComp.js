@@ -6,6 +6,7 @@ document.addEventListener(
   },
   false
 );
+var subs = {}
 
 function requestUserData(key) {
   fetch("/GET/profile/default")
@@ -24,15 +25,18 @@ function requestUserData(key) {
         .replace("{{USERNAME}}", myJson.username)
         .replace("{{EMAIL}}", myJson.email)
         .replace("{{TITLE}}",myJson.title)
+        .replace("{{PROFILEPIC}}",myJson.picture)
         .replace("{{EDIT OR SUBSCRIBE}}","Edit");
       } else {
         txt += client.responseText
         .replace("{{USERNAME}}", myJson.username)
         .replace("{{EMAIL}}", myJson.email)
         .replace("{{TITLE}}",myJson.title)
+        .replace("{{PROFILEPIC}}",myJson.picture)
         .replace("{{EDIT OR SUBSCRIBE}}","Subscribe");
       }
       document.getElementById("C.PROFILE").innerHTML = txt;
+      subs = myJson.sub;
       dynamicallyLoadScript("/file../JS/subscriptionList.js");
     };
     client.send();

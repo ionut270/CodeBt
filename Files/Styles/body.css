@@ -20,3 +20,20 @@
     background-color: #ff5252;
     outline: 1px solid slategrey;
 }
+.margin-left{
+    margin-left: 1em;
+}
+.margin-right{
+    margin-right: 1em;
+}
+.green{
+    color:white;
+}
+.black{
+    color:white !important;
+    background-color: #24292e !important;
+}
+.black:hover{
+    color:#ff5252 !important;
+    background-color: #3f464d !important;
+}

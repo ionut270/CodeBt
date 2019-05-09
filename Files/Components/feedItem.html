@@ -1,13 +1,23 @@
 <div class="feedItem">
   <div class="generic">
+    <div class="generic">
+    <button class="button red margin-right big shadow">+</button>
     <p class="feedItemPlatform">{{PLATFORM}}</p>
-    <a href="{{SOURCE}}" class="source">Source</a>
+  </div>
+    <a href="{{SOURCE}}" class="source shadow">Source</a>
   </div>
   <div class="line"></div>
-  <a href="/itemPage" class="feedItemDescription"> {{DESCRIPTION}} </a>
+  <a href="{{URL}}" class="feedItemDescription shadow"> {{DESCRIPTION}} </a>
   <div class="generic">
-    <p class="feedItemType">{{TYPE}}</p>
-    <p class="feedItemDate">Date: {{DATE}}</p>
-    <p class="feedItemDate">Status: {{STATUS}}</p>
+      <div class="generic mobile-btn">
+    <button class="button black shadow margin-right big mobile-btn">+ {{TYPE}}</button>
+    <!-- <p class="feedItemType">{{TYPE}}</p> -->
+    </div>
+    <p class="feedItemDate big hidden-mobile">Date: {{DATE}}</p>
+    <div class="generic hidden-mobile">
+    <button class="button red margin-right big">+</button>
+    <p class="feedItemDate big ">Author: {{AUTHOR}}</p>
+    </div>
+
   </div>
 </div>

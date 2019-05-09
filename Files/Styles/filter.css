@@ -99,7 +99,7 @@
         border: 1px solid #ff5252;
     }
     .className {
-        color: #24292e;
+        color: #24292e !important;
         max-width: 125px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -109,9 +109,11 @@
         line-height: 250%;
         font-weight: 600;
         font-size: 14px;
+        max-width: 90%;
+        max-height: 2.188em;
     }
     .className:hover {
-        color: #ff5252;
+        color: #ff5252 !important;
     }
     .feedClass {
         font-size: .8em;
@@ -227,7 +229,7 @@
         border: 1px solid #ff5252;
     }
     .className {
-        color: #24292e;
+        color: #24292e !important;
         max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -237,6 +239,8 @@
         line-height: 250%;
         font-weight: 400;
         font-size: 3em;
+        max-width: 90%;
+        max-height: 2.188em;
     }
     .feedClass {
         font-size: .8em;
