@@ -6,17 +6,18 @@ document.addEventListener(
 	},
 	false,
 );
+
+
 function getHeaderData(key) {
+	console.log("HeaderData!");
 	fetch("/GET/profile/header")
 		.then(function (response) {
 			return response.json();
 		})
 		.then(function (myJson) {
-			console.log("RESPONSE from header !:", myJson);
 			var client = new XMLHttpRequest();
 			client.open("GET", "/file../Components/header.html");
-			//client.onreadystatechange = function () {
-			client.onload = function (){
+			client.onload = function () {
 				var txt = "";
 				if (myJson.own) {
 					txt += client.responseText

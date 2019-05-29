@@ -10,7 +10,6 @@
  */
 
 // const rp = require('request-promise');
-const $ = require('cheerio');
 // const url = 'https://www.exploit-db.com/';
 
 // function scrapper() {

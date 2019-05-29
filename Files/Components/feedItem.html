@@ -1,23 +1,36 @@
 <div class="feedItem">
-  <div class="generic">
     <div class="generic">
-    <button class="button red margin-right big shadow">+</button>
-    <p class="feedItemPlatform">{{PLATFORM}}</p>
-  </div>
-    <a href="{{SOURCE}}" class="source shadow">Source</a>
-  </div>
-  <div class="line"></div>
-  <a href="{{URL}}" class="feedItemDescription shadow"> {{DESCRIPTION}} </a>
-  <div class="generic">
-      <div class="generic mobile-btn">
-    <button class="button black shadow margin-right big mobile-btn">+ {{TYPE}}</button>
-    <!-- <p class="feedItemType">{{TYPE}}</p> -->
+        <div class="generic">
+            <button
+                class="button red margin-right big shadow logged"
+                onclick="subscribePlatform('{{ SUBSCRIBE_PLATFORM }}')"
+            >
+                +
+            </button>
+            <p class="feedItemPlatform">{{ PLATFORM }}</p>
+        </div>
+        <a href="{{ SOURCE }}" class="source shadow">Source</a>
     </div>
-    <p class="feedItemDate big hidden-mobile">Date: {{DATE}}</p>
-    <div class="generic hidden-mobile">
-    <button class="button red margin-right big">+</button>
-    <p class="feedItemDate big ">Author: {{AUTHOR}}</p>
+    <div class="line"></div>
+    <a href="{{ URL }}" class="feedItemDescription shadow">
+        {{ DESCRIPTION }}
+    </a>
+    <div class="generic">
+        <div class="generic mobile-btn">
+            <button
+                class="button black shadow margin-right big mobile-btn"
+                onclick="subscribeType('{{ SUBSCRIBE_TYPE }}')"
+            >
+                + {{ TYPE }}
+            </button>
+            <!-- <p class="feedItemType">{{TYPE}}</p> -->
+        </div>
+        <p class="feedItemDate big hidden-mobile">Date: {{ DATE }}</p>
+        <div class="generic hidden-mobile">
+            <button class="button red margin-right big">+</button>
+            <p class="feedItemDate big " onclick="subscribeAuthor('{{ SUBSCRIBE_AUTHOR }}')">
+                Author: {{ AUTHOR }}
+            </p>
+        </div>
     </div>
-
-  </div>
 </div>
