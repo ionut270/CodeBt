@@ -35,7 +35,7 @@ Pentru evitarea unui sistem de notificari care sa supraincarce utilizatorul pent
 - Schimbarea tipului unui utilizator
 - Adaugarea de surse pt web scrapping si parsalrea lor
 
-##Tehnologii utilizate
+## Tehnologii utilizate
 
 - Nodejs
 Un mediu de executie oen-source, multiplatforma, care permite dezvoltatorilor sa creeze tot felul de instrumente si aplicatii in JavaScript. 
@@ -57,7 +57,7 @@ Baza de date firebase este o baza de date hostata intrun cloud. Este NoSQL si it
 - Live data update
 - altele
 
-##Descriere module
+## Descriere module
 
 **1. Web scrapper 100%**
  
@@ -107,7 +107,7 @@ Modulul serveste fisiere statice utilizatorului, fisiere aflate pe server ( ex :
 "/file..." in fata rutei.
 modulul foloseste modulul 'fs' deja prezent in nodejs ce ofera utilizatorului functii de citire si editare a fisierelor.
 
-#Use case general
+# Use case general
  
  
 Un utilizator vine pe pagina principala, se trimite un request la server si se afiseaza o lista cu cele mai noi alerte de securitate. 
