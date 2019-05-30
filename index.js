@@ -3,32 +3,15 @@ const http = require("http"),
   feed = require("./Routes/feed.js"),
   itemPage = require("./Routes/itemPage.js"),
   profile = require("./Routes/profile.js"),
-  // login = require("./Routes/login.js"),
-  // register = require("./Routes/register.js"),
   fs = require("fs"),
-  // events = require("events"),
-  // util = require("util"),
   staticServe = require("./mimodule/serve-static/main.js"),
-  //scrapper = require('./mimodule/web-scrapper/main.js'),
   auth = require("./mimodule/auth/CRUD.js"),
-  // cookieParser = require("./mimodule/cookie-parser/main"),
-  // sesionID = require("./mimodule/generator/uuid"),
-  // qs = require("querystring"),
   manageREQ = require("./mimodule/requests/main.js");
-// var myEmitter = new events.EventEmitter();
-
-// var userData = {
-//   username: "NONE",
-//   password: "How about no?",
-//   email: "somethin@somethin.somethin"
-// };
 
 const server = http.createServer((req, res) => {
-  //console.log("url:", req.url);
   if (req.url.indexOf("/GET/") != -1) {
     manageREQ.request(req, res);
   } else if (req.url === "/") {
-    //scrapper.scrap();
     feed.feed(req, res);
   } else if (req.url === "/feed") {
     feed.feed(req, res);

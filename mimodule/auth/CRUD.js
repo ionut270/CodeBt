@@ -17,7 +17,6 @@ var login = function (req, res) {
     req.on("data", (data) => {
         var promiseData = new Promise((resolve, reject) => {
             body += data;
-            //console.log(body);
             if (body.length > 1e6) req.connection.destroy();
             resolve(body);
         })
@@ -27,13 +26,10 @@ var login = function (req, res) {
                 var ref = admin.database().ref("/auth/users");
                 var usersRef = ref.child("Users");
                 usersRef.once(`value`, function (snap) {
-                    //console.log("***********LOGIN**********");
                     snap.forEach(function (childSnap) {
                         if (childSnap.val().username === post.username) {
                             if (childSnap.val().password === post.password) {
                                 userData = childSnap.val();
-                                //console.log("User found!");
-                                //console.log("***********LOGIN**********");
                                 userData["session"] = sesionID.generate(childSnap.key);
                                 //We stored this in here, now we should put in our db this session Id
                                 var ref = admin.database().ref("/auth/users/Users/" + childSnap.key);
@@ -42,13 +38,10 @@ var login = function (req, res) {
                                 ref.update({
                                     "session": userData.session
                                 });
-                                //var userRef = ref.update(userData);
                             } else {
                                 console.log("Bad password!");
-                                //console.log("***********LOGIN**********");
                             }
                         } else {
-                            //console.log("Not this user!");
                         }
                     });
                 }).then(() => {
