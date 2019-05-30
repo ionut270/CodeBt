@@ -1,13 +1,3 @@
-/**
- * teme ?
- *
- * Soap
- * Informatia adusa in mod dinamic ref la stiri
- * Un serviciu 2 functionalitati
- * 1 call cu numele unei surse sa returneze titul ultimei stiri
- * data la care a fost postata ultima stire
- * calluri din client
- */
 
 const admin = require("firebase-admin");
 const serviceAccount = require("../login-684d3-firebase-adminsdk-lvtgv-6e51107487.json");
@@ -25,8 +15,9 @@ let scrape = async () => {
 	console.log("Scrapper launched for https://www.exploit-db.com/ !");
 	const browser = await puppeteer.launch({
 		headless: true,
+		args: ['--no-sandbox', '--disable-setuid-sandbox']
 	});
-
+	//console.log("Sucessfull args!");
 	var page = await browser.newPage();
 	await page.goto(scrapUrl);
 	await page.waitFor(2000);
@@ -82,62 +73,7 @@ let scrape = async () => {
 	scrapp
 		.then(function(res) {
 			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[1]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[2]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[3]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[4]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[5]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[6]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[7]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[8]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[9]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[10]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[11]));
-			});
-		})
-		.then(function(res) {
-			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[12]));
+				resolve(scrapeItem(data[14]));
 			});
 		})
 		.then(function(res) {
@@ -147,7 +83,67 @@ let scrape = async () => {
 		})
 		.then(function(res) {
 			return new Promise(function(resolve, reject) {
-				resolve(scrapeItem(data[14]));
+				resolve(scrapeItem(data[12]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[11]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[10]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[9]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[8]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[7]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[6]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[5]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[4]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[3]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[2]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[1]));
+			});
+		})
+		.then(function(res) {
+			return new Promise(function(resolve, reject) {
+				resolve(scrapeItem(data[0]));
 			});
 		})
 		.then(function(res) {
@@ -158,6 +154,7 @@ let scrape = async () => {
 let scrapeItem = async data => {
 	const browser = await puppeteer.launch({
 		headless: true,
+		args: ['--no-sandbox', '--disable-setuid-sandbox']	
 	});
 
 	var page = await browser.newPage();
@@ -210,17 +207,54 @@ let scrapeItem = async data => {
 	var ref;
 	//yay am pushat :/
 
-	ref = admin.database().ref("/items/lastItemId");
-	ref.once(`value`, function(snap) {
-		console.log("Updating data ", data.index, "\nLatest item in db ", snap.val());
-		if (data.index > snap.val()) {
-			ref.set(data.index);
-		}
-		var ref2 = admin.database().ref("/items/" + data.index);
-		ref2.set(data);
-	});
+	//ref = admin.database().ref("/items/lastItemId");
+	//ref.once(`value`, function(snap) {
+	//	console.log("Updating data ", data.index, "\nLatest item in db ", snap.val());
+	//	if (data.index > snap.val()) {
+	//		ref.set(data.index);
+	//	}
+	//	var ref2 = admin.database().ref("/items/" + data.index);
+	//	ref2.set(data);
+	//});
 	//return txt;
-	return 1;
+	//return 1;
+	console.log("Data is ",data);
+	ref = admin.database().ref("/items/lastItemId");
+        ref.once(`value`, function(snap) {
+                //convertim valoarea asta al un integer
+                var dbIndex = parseInt(snap.val());
+                //il avem ca si numar , scadem din el 1 si pusham ? ... 
+                //accesam acel lastitem id
+                ref = admin.database().ref("/items/"+dbIndex);
+                ref.once('value',function (snap){
+                        //comparam indesii
+			if(snap.val() !== undefined && snap.val() !== null ) {
+                        	if(snap.val().index == data.index){ 
+                                	//Inseamna ca am deja datele astea
+                                	//si pushez peste ele  
+                                	ref.set(data);
+                        	} else {
+                                	dbIndex--;
+                                	ref = admin.database().ref("/items/"+dbIndex);
+                                	ref.set(data)
+                                	//asta inseamna ca trebuie actualizat si last itemid
+                                	ref = admin.database().ref("/items/lastItemId");
+                                	ref.set(dbIndex);
+                        	}
+			} else {
+				//pusham direct
+				ref.set(data); 
+			}
+                });
+                console.log("Updating data ", data.index, "\nLatest item in db ", snap.val());
+                //if (data.index > snap.val()) {
+                //      ref.set(data.index);
+                //}
+                //var ref2 = admin.database().ref("/items/" + data.index);
+                //ref2.set(data);
+        });
+        //return txt;
+        return 1;
 };
 
 module.exports = {
