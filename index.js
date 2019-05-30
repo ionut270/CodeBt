@@ -1,5 +1,5 @@
 const http = require("http"),
-  port = 3000,
+  port = 8080,
   feed = require("./Routes/feed.js"),
   itemPage = require("./Routes/itemPage.js"),
   profile = require("./Routes/profile.js"),

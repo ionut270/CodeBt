@@ -47,7 +47,7 @@ Mediul de executie este destinat utilizarii in afara contextului unui browser ( 
 Baza de date firebase este o baza de date hostata intrun cloud. Este NoSQL si iti permite sa stochezi si sa sincronizezi datele intre useri in timp real 
 [sursa](https://firebase.google.com/products/realtime-database/)
 
-##Module necesare
+## Module necesare
 
 - Web scrapper
 - Auth

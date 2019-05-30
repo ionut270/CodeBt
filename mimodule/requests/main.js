@@ -120,18 +120,16 @@ function subscribe(type, data, req, res) {
 }
 
 function getItems(req, res) {
-	//TODO
-	/**MANAGE SPECIFIC QUERRIES
-	 * The idea :
-	 * Press on a button, make req to here somewhere
-	 * inside cookies or the header we'll have the querry value
-	 * and from here we make sure only that is returned as a result
-	 * then from front the app removes the tag with the items and rerenders it
-	 */
-	var ref = admin.database().ref("/items");
+	var pageLength = 6;
+	console.log(req.headers.start_at);
+	var ref = admin.database().ref("/items").orderByKey().limitToFirst(pageLength).startAt(req.headers.start_at);
 	ref.once("value").then(function(snap) {
+		//console.log(snap.val());
 		res.end(JSON.stringify(snap.val()));
-	});
+	})
+	.catch(res=>{
+		console.log("Exception > ",res);
+	})
 }
 
 function logout(req, res) {
