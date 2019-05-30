@@ -27,13 +27,13 @@ var login = function (req, res) {
                 var ref = admin.database().ref("/auth/users");
                 var usersRef = ref.child("Users");
                 usersRef.once(`value`, function (snap) {
-                    console.log("***********LOGIN**********");
+                    //console.log("***********LOGIN**********");
                     snap.forEach(function (childSnap) {
                         if (childSnap.val().username === post.username) {
                             if (childSnap.val().password === post.password) {
                                 userData = childSnap.val();
-                                console.log("User found!");
-                                console.log("***********LOGIN**********");
+                                //console.log("User found!");
+                                //console.log("***********LOGIN**********");
                                 userData["session"] = sesionID.generate(childSnap.key);
                                 //We stored this in here, now we should put in our db this session Id
                                 var ref = admin.database().ref("/auth/users/Users/" + childSnap.key);
@@ -45,10 +45,10 @@ var login = function (req, res) {
                                 //var userRef = ref.update(userData);
                             } else {
                                 console.log("Bad password!");
-                                console.log("***********LOGIN**********");
+                                //console.log("***********LOGIN**********");
                             }
                         } else {
-                            console.log("Not this user!");
+                            //console.log("Not this user!");
                         }
                     });
                 }).then(() => {

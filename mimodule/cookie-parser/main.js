@@ -32,7 +32,7 @@ function post(res, obj) {
     myCookie += Object.keys(obj)[i] + "=" + Object.values(obj)[i] + ",";
   }
   myCookie += "}";
-  console.log(myCookie);
+  //console.log(myCookie);
   res.writeHead(200, {
     "set-Cookie": myCookie
   });

@@ -38,6 +38,9 @@ function getHeaderData(key) {
 				dynamicallyLoadScript("/file../JS/headerMenu.js");
 			};
 			client.send();
+		})
+		.catch(res=>{
+			console.log("Exception > ",res)
 		});
 }
 

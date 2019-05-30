@@ -3,36 +3,34 @@ const http = require("http"),
   feed = require("./Routes/feed.js"),
   itemPage = require("./Routes/itemPage.js"),
   profile = require("./Routes/profile.js"),
-  login = require("./Routes/login.js"),
-  register = require("./Routes/register.js"),
+  // login = require("./Routes/login.js"),
+  // register = require("./Routes/register.js"),
   fs = require("fs"),
-  events = require("events"),
-  util = require("util"),
+  // events = require("events"),
+  // util = require("util"),
   staticServe = require("./mimodule/serve-static/main.js"),
   //scrapper = require('./mimodule/web-scrapper/main.js'),
   auth = require("./mimodule/auth/CRUD.js"),
-  cookieParser = require("./mimodule/cookie-parser/main"),
-  sesionID = require("./mimodule/generator/uuid"),
-  qs = require("querystring"),
+  // cookieParser = require("./mimodule/cookie-parser/main"),
+  // sesionID = require("./mimodule/generator/uuid"),
+  // qs = require("querystring"),
   manageREQ = require("./mimodule/requests/main.js");
-var myEmitter = new events.EventEmitter();
+// var myEmitter = new events.EventEmitter();
 
-var userData = {
-  username: "NONE",
-  password: "How about no?",
-  email: "somethin@somethin.somethin"
-};
+// var userData = {
+//   username: "NONE",
+//   password: "How about no?",
+//   email: "somethin@somethin.somethin"
+// };
 
 const server = http.createServer((req, res) => {
   //console.log("url:", req.url);
   if (req.url.indexOf("/GET/") != -1) {
-    console.log("REQUEST RECIEVED!");
     manageREQ.request(req, res);
   } else if (req.url === "/") {
     //scrapper.scrap();
     feed.feed(req, res);
   } else if (req.url === "/feed") {
-    console.log("feed!");
     feed.feed(req, res);
   } else if (req.url.indexOf("/item/") != -1) {
     itemPage.itemPage(req, res);
@@ -63,7 +61,6 @@ const server = http.createServer((req, res) => {
   } else if (req.url.indexOf("/file../") != -1) {
     staticServe.staticServe(req, res, "Files");
   } else {
-    console.log("404" + req.url);
     res.statusCode = 404;
     res.setHeader("Content-Type", "text/html");
     var myReadStream = fs.createReadStream(
@@ -72,12 +69,6 @@ const server = http.createServer((req, res) => {
     );
     myReadStream.pipe(res);
   }
-  // else {
-  //     res.statusCode = 404;
-  //     res.setHeader('Content-Type', 'text/html');
-  //     var myReadStream = fs.createReadStream(__dirname + '/src/404/index.html', 'utf8');
-  //     myReadStream.pipe(res);
-  // }
 });
 
 server.listen(port, () => {

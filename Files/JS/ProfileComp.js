@@ -40,6 +40,9 @@ function requestUserData(key) {
       dynamicallyLoadScript("/file../JS/subscriptionList.js");
     };
     client.send();
+  })
+  .catch(res=>{
+    console.log("Exception > ",res)
   });
 }
 

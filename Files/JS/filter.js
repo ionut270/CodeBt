@@ -20,6 +20,9 @@ function renderFilter() {
 				} else {
 					document.getElementById("SUBTITLE").innerHTML = "";
 				}
+			})
+			.catch(res=>{
+				console.log("Exception > ",res)
 			});
 	};
 	client.send();

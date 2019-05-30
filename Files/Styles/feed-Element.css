@@ -262,6 +262,7 @@
 }
 
 .button {
+    white-space: nowrap;
     color: #fff;
     text-shadow: none;
     background-image: none;
