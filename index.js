@@ -1,5 +1,3 @@
-// const http = require("http"),
-//   port = 8080;
 const scrape = require('./Scrapper/scrapper');
 
 var i = 0;
@@ -11,16 +9,10 @@ function timeout() {
   + currentdate.getMinutes() + ":" + currentdate.getSeconds());
   i++;
   scrape.scrap();
-  var random = Math.floor(Math.random() * 10);
-  console.log("Running again after",30+random,"minutes!");
-	setTimeout(() => {
-    timeout();
-  }, 60000 * 30 + random); //<- ruleaza al fiecare jumatate de ora cu o marja de 10 minute
+  // var random = Math.floor(Math.random() * 10);
+  // // console.log("Running again after",30+random,"minutes!");
+	// // setTimeout(() => {
+  // //   timeout();
+  // // }, 60000 * 30 + random); 
 }
 timeout();
-// const server = http.createServer((req,res)=>{
-//   call();
-// })
-// server.listen(port, () => {
-//   console.log(`Scrapper deployed on ${port}`);
-// });

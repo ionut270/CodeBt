@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/ionut270/BananaBit#readme",
   "dependencies": {
+    "dom-parser": "^0.1.6",
     "firebase-admin": "^7.3.0",
+    "jsdom": "^15.1.1",
     "node-html-parser": "^1.1.15",
     "puppeteer": "^1.15.0"
   }
