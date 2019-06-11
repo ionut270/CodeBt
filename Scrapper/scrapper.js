@@ -219,6 +219,20 @@ let scrapeItem = async data => {
 	//return txt;
 	//return 1;
 	console.log("Data is ",data);
+
+	//avem pan ala 14 iteme :/
+	//Trebuie sa compar datele pe care le am, cu datele din baza de date :/ 
+	//pai cum facem asta ? 
+	//stocham ultimul item din baza de date, mai exact idul
+
+	//si dupa comparam ultimul item cu idul ala
+	//si cautam dupa itemul precedent in baza de date sa stim cat inseram :/
+
+	//Cum verificam totusi
+	//avem ultimul item stocat
+	//sa nu avem duplicate in baza de date :/
+
+
 	ref = admin.database().ref("/items/lastItemId");
         ref.once(`value`, function(snap) {
                 //convertim valoarea asta al un integer
