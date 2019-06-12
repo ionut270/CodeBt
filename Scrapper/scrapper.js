@@ -97,10 +97,20 @@ let scrapeItem = async data => {
 		headless: true,
 		args: ['--no-sandbox', '--disable-setuid-sandbox']
 	});
-
+	console.log("0")
 	var page = await browser.newPage();
-	await page.goto(scrapUrl + data.url);
+	console.log("1")
+	await page.goto(scrapUrl + data.url).catch((res)=>{
+		console.log("Exception!, Page is too damn huge! ");
+		console.log(data.url.split(/\//));
+		var pageIndex = parseInt(data.url.split(/\//)[1]) + 1;
+		scrapeItem({ lastItemId:data.lastItemId, url:"exploits/"+pageIndex})
+	});
+	console.log("2");
 	await page.waitFor(2000);
+	console.log("3")
+
+	//solution ? fetch  ? eeh :/
 
 	let bodyHTML = await page.evaluate(() => document.body.innerHTML);
 	const content = p.parse(bodyHTML, {
