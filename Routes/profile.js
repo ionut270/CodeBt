@@ -62,7 +62,7 @@ var profile = function(req, res) {
     }
   } else {
     var myReadStream = fs.createReadStream(
-      __dirname + "\\..\\src/Profile/index.html",
+      __dirname + "\/..\/src/Profile/index.html",
       "utf8"
     );
     myReadStream.pipe(res);
