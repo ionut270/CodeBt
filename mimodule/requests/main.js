@@ -9,13 +9,13 @@ function reverseObject(object) {
 	var keys = [];
 
 	for (var key in object) {
-			keys.push(key);
+		keys.push(key);
 	}
 
 	for (var i = keys.length - 1; i >= 0; i--) {
 		var value = object[keys[i]];
-		newObject[keys[i]]= value;
-	}       
+		newObject[keys[i]] = value;
+	}
 
 	return newObject;
 }
@@ -70,7 +70,8 @@ function subscribe(type, data, req, res) {
 				var ref = admin.database().ref("/auth/users/Users/" + uid + "/sub");
 				ref.once("value").then(function(snap) {
 					///console.log(snap.val()[type]); // tip inexistent :/  ...
-					if (snap.val()[type] === undefined) {
+					console.log("Here I crash ",snap.val()); //its null ... daca e null atunci ... pushez ceva ...
+					if (snap.val() === null || snap.val()[type] === undefined ) {
 						console.log("This type is not in db!", type);
 						//we add it along with our val on 0 so we can push more of these
 						ref = admin.database().ref("/auth/users/Users/" + uid + "/sub/" + type + "/0");
@@ -134,26 +135,34 @@ function subscribe(type, data, req, res) {
 }
 
 function getItems(req, res) {
-	var pageLength = 6;
+	var pageLength = 15;
 	console.log(req.headers.start_at);
-
-	/**
-	 * Primesc start at
-	 * Daca e 0 ia ultimul element din baza de date si porneste de acolo
-	 */
+	//req.headers.start_at = "-2000"; // lastitem id daca e 0 ...
 
 	if (req.headers.start_at === "0") {
-		console.log("Kinda here!");
-		var ref = admin
-			.database()
-			.ref("/items")
+		console.log("Begining");
+		var ref = admin.database().ref("/items/lastItemId");
 		ref
 			.once("value")
 			.then(function(snap) {
-				//console.log(snap.val());
-				var data_to_send = reverseObject(snap.val());
-				console.log(data_to_send);
-				res.end(JSON.stringify(data_to_send));
+				console.log(snap.val());
+				req.headers.start_at = JSON.stringify(snap.val());
+
+				var ref = admin
+					.database()
+					.ref("/items")
+					.orderByKey()
+					.limitToFirst(pageLength)
+					.startAt(req.headers.start_at);
+				ref
+					.once("value")
+					.then(function(snap) {
+						console.log("Sent data!");
+						res.end(JSON.stringify(snap.val()));
+					})
+					.catch(res => {
+						console.log("Exception > ", res);
+					});
 			})
 			.catch(res => {
 				console.log("Exception > ", res);
@@ -163,12 +172,13 @@ function getItems(req, res) {
 		var ref = admin
 			.database()
 			.ref("/items")
+			.orderByKey()
 			.limitToFirst(pageLength)
 			.startAt(req.headers.start_at);
 		ref
 			.once("value")
 			.then(function(snap) {
-				console.log(snap.val());
+				console.log("Sent data!");
 				res.end(JSON.stringify(snap.val()));
 			})
 			.catch(res => {
@@ -320,35 +330,4 @@ module.exports = {
 	request: request,
 };
 
-
-ref = admin.database().ref("/items/lastItemId");
-ref.once(`value`, function(snap) {
-				//convertim valoarea asta al un integer
-				var dbIndex = parseInt(snap.val());
-				//il avem ca si numar , scadem din el 1 si pusham ? ... 
-				//accesam acel lastitem id
-				ref = admin.database().ref("/items/"+dbIndex);
-				ref.once('value',function (snap){
-								//comparam indesii
-								if(snap.vall().index == data.index){ 
-												//Inseamna ca am deja datele astea
-												//si pushez peste ele  
-												ref.set(data);
-								} else {
-												dbIndex--;
-												ref = admin.database().ref("/items/"+dbIndex);
-												ref.set(data)
-												//asta inseamna ca trebuie actualizat si last itemid
-												ref = admin.database().ref("/items/lastItemId");
-												ref.set(dbIndex);
-								}
-				})
-				console.log("Updating data ", data.index, "\nLatest item in db ", snap.val() );
-				//if (data.index > snap.val()) {
-				//      ref.set(data.index);
-				//}
-				//var ref2 = admin.database().ref("/items/" + data.index);
-				//ref2.set(data);
-});
-//return txt;
 return 1;

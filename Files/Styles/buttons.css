@@ -1,0 +1,621 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Cantarell:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:700,400,300);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+/**************************************************************************************************************************/
+@media (orientation: landscape) {
+    .BTNbutton--small {
+        font-size: 13px;
+        font-size: .8rem;
+        padding: .5em 1.5em;
+    }
+
+
+    .BTNcontainer {
+        width: 700px;
+        margin: 5rem auto;
+        padding: 4rem 2rem;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0;
+    }
+
+    .BTNbutton,
+    [class*='button--'] {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        /* margin: 0 16px 20px 0; */
+        /* REM fallback */
+        /* margin: 0 1rem calc(1rem + 4px) 0; */
+        /* Account for extra height from box shadow */
+        /* padding: 1em 2em; */
+        font-weight: 200;
+        text-decoration: none;
+        color: white;
+        border-radius: 0;
+        transition: all .25s;
+        transform: translate(0, -2px);
+        background-color: #bada55;
+        box-shadow: 0 2px 0 #a8cf2d;
+    }
+
+    .BTNbutton:hover,
+    .BTNbutton:focus,
+    [class*='button--']:hover,
+    [class*='button--']:focus {
+        color: white;
+        outline: none;
+        box-shadow: none;
+        transform: translate(0, 0);
+    }
+
+    .BTNbutton:hover,
+    .BTNbutton:focus,
+    [class*='button--']:hover,
+    [class*='button--']:focus {
+        background-color: #c3df6a;
+    }
+
+    .BTNbutton:active,
+    [class*='button--']:active {
+        background-color: #bada55;
+    }
+
+    .BTNbutton--red {
+        background-color: #FF4136;
+        box-shadow: 0 2px 0 #ff1103;
+    }
+
+    .BTNbutton--red:hover,
+    .BTNbutton--red:focus {
+        background-color: #ff5950;
+    }
+
+    .BTNbutton--red:active {
+        background-color: #FF4136;
+    }
+
+    .BTNbutton--orange {
+        background-color: #FF851B;
+        box-shadow: 0 2px 0 #e76b00;
+    }
+
+    .BTNbutton--orange:hover,
+    .BTNbutton--orange:focus {
+        background-color: #ff9335;
+    }
+
+    .BTNbutton--orange:active {
+        background-color: #FF851B;
+    }
+
+    .BTNbutton--yellow {
+        background-color: #FFDC00;
+        box-shadow: 0 2px 0 #ccb000;
+    }
+
+    .BTNbutton--yellow:hover,
+    .BTNbutton--yellow:focus {
+        background-color: #ffe01a;
+    }
+
+    .BTNbutton--yellow:active {
+        background-color: #FFDC00;
+    }
+
+    .BTNbutton--lime {
+        background-color: #01FF70;
+        box-shadow: 0 2px 0 #00cd5a;
+    }
+
+    .BTNbutton--lime:hover,
+    .BTNbutton--lime:focus {
+        background-color: #1bff7e;
+    }
+
+    .BTNbutton--lime:active {
+        background-color: #01FF70;
+    }
+
+    .BTNbutton--green {
+        background-color: #2ECC40;
+        box-shadow: 0 2px 0 #25a233;
+    }
+
+    .BTNbutton--green:hover,
+    .BTNbutton--green:focus {
+        background-color: #40d451;
+    }
+
+    .BTNbutton--green:active {
+        background-color: #2ECC40;
+    }
+
+    .BTNbutton--olive {
+        background-color: #3D9970;
+        box-shadow: 0 2px 0 #2e7555;
+    }
+
+    .BTNbutton--olive:hover,
+    .BTNbutton--olive:focus {
+        background-color: #44ab7d;
+    }
+
+    .BTNbutton--olive:active {
+        background-color: #3D9970;
+    }
+
+    .BTNbutton--teal {
+        background-color: #39CCCC;
+        box-shadow: 0 2px 0 #2ba7a7;
+    }
+
+    .BTNbutton--teal:hover,
+    .BTNbutton--teal:focus {
+        background-color: #4dd1d1;
+    }
+
+    .BTNbutton--teal:active {
+        background-color: #39CCCC;
+    }
+
+    .BTNbutton--aqua {
+        background-color: #7FDBFF;
+        box-shadow: 0 2px 0 #4ccdff;
+    }
+
+    .BTNbutton--aqua:hover,
+    .BTNbutton--aqua:focus {
+        background-color: #99e2ff;
+    }
+
+    .BTNbutton--aqua:active {
+        background-color: #7FDBFF;
+    }
+
+    .BTNbutton--blue {
+        background-color: #0074D9;
+        box-shadow: 0 2px 0 #0059a6;
+    }
+
+    .BTNbutton--blue:hover,
+    .BTNbutton--blue:focus {
+        background-color: #0082f3;
+    }
+
+    .BTNbutton--blue:active {
+        background-color: #0074D9;
+    }
+
+    .BTNbutton--purple {
+        background-color: #B10DC9;
+        box-shadow: 0 2px 0 #870a99;
+    }
+
+    .BTNbutton--purple:hover,
+    .BTNbutton--purple:focus {
+        background-color: #c60fe1;
+    }
+
+    .BTNbutton--purple:active {
+        background-color: #B10DC9;
+    }
+
+    .BTNbutton--fuchsia {
+        background-color: #F012BE;
+        box-shadow: 0 2px 0 #c30c9a;
+    }
+
+    .BTNbutton--fuchsia:hover,
+    .BTNbutton--fuchsia:focus {
+        background-color: #f22ac5;
+    }
+
+    .BTNbutton--fuchsia:active {
+        background-color: #F012BE;
+    }
+
+    .BTNbutton--maroon {
+        background-color: #85144B;
+        box-shadow: 0 2px 0 #590d32;
+    }
+
+    .BTNbutton--maroon:hover,
+    .BTNbutton--maroon:focus {
+        background-color: #9b1758;
+    }
+
+    .BTNbutton--maroon:active {
+        background-color: #85144B;
+    }
+
+    .BTNbutton--navy {
+        background-color: #001F3F;
+        box-shadow: 0 2px 0 #00060c;
+    }
+
+    .BTNbutton--navy:hover,
+    .BTNbutton--navy:focus {
+        background-color: #002c59;
+    }
+
+    .BTNbutton--navy:active {
+        background-color: #001F3F;
+    }
+
+    .BTNbutton--black {
+        background-color: #333;
+        box-shadow: 0 2px 0 #1a1a1a;
+    }
+
+    .BTNbutton--black:hover,
+    .BTNbutton--black:focus {
+        background-color: #404040;
+    }
+
+    .BTNbutton--black:active {
+        background-color: #333;
+    }
+
+    .BTNbutton--gray {
+        background-color: #888;
+        box-shadow: 0 2px 0 #6f6f6f;
+    }
+
+    .BTNbutton--gray:hover,
+    .BTNbutton--gray:focus {
+        background-color: #959595;
+    }
+
+    .BTNbutton--gray:active {
+        background-color: #888;
+    }
+
+    .BTNbutton--white {
+        background-color: #eee;
+        box-shadow: 0 2px 0 #d5d5d5;
+    }
+
+    .BTNbutton--white:hover,
+    .BTNbutton--white:focus {
+        background-color: #fbfbfb;
+    }
+
+    .BTNbutton--white:active {
+        background-color: #eee;
+    }
+
+    /* Make text dark on buttons that have light background-colors */
+    .BTNbutton--yellow,
+    .BTNbutton--lime,
+    .BTNbutton--aqua,
+    .BTNbutton--white {
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .BTNbutton--yellow:hover,
+    .BTNbutton--lime:hover,
+    .BTNbutton--aqua:hover,
+    .BTNbutton--white:hover {
+        color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+@media (orientation: portrait) {
+    .BTNbutton--small {
+        font-size: 13px;
+        font-size: .8rem;
+        padding: .5em 1.5em;
+    }
+
+
+    .BTNcontainer {
+        width: 700px;
+        margin: 5rem auto;
+        padding: 4rem 2rem;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0;
+    }
+
+    .BTNbutton,
+    [class*='button--'] {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        /* margin: 0 16px 20px 0; */
+        /* REM fallback */
+        /* margin: 0 1rem calc(1rem + 4px) 0; */
+        /* Account for extra height from box shadow */
+        /* padding: 1em 2em; */
+        font-weight: 200;
+        text-decoration: none;
+        color: white;
+        border-radius: 0;
+        transition: all .25s;
+        transform: translate(0, -2px);
+        background-color: #bada55;
+        box-shadow: 0 2px 0 #a8cf2d;
+    }
+
+    .BTNbutton:hover,
+    .BTNbutton:focus,
+    [class*='button--']:hover,
+    [class*='button--']:focus {
+        color: white;
+        outline: none;
+        box-shadow: none;
+        transform: translate(0, 0);
+    }
+
+    .BTNbutton:hover,
+    .BTNbutton:focus,
+    [class*='button--']:hover,
+    [class*='button--']:focus {
+        background-color: #c3df6a;
+    }
+
+    .BTNbutton:active,
+    [class*='button--']:active {
+        background-color: #bada55;
+    }
+
+    .BTNbutton--red {
+        background-color: #FF4136;
+        box-shadow: 0 2px 0 #ff1103;
+    }
+
+    .BTNbutton--red:hover,
+    .BTNbutton--red:focus {
+        background-color: #ff5950;
+    }
+
+    .BTNbutton--red:active {
+        background-color: #FF4136;
+    }
+
+    .BTNbutton--orange {
+        background-color: #FF851B;
+        box-shadow: 0 2px 0 #e76b00;
+    }
+
+    .BTNbutton--orange:hover,
+    .BTNbutton--orange:focus {
+        background-color: #ff9335;
+    }
+
+    .BTNbutton--orange:active {
+        background-color: #FF851B;
+    }
+
+    .BTNbutton--yellow {
+        background-color: #FFDC00;
+        box-shadow: 0 2px 0 #ccb000;
+    }
+
+    .BTNbutton--yellow:hover,
+    .BTNbutton--yellow:focus {
+        background-color: #ffe01a;
+    }
+
+    .BTNbutton--yellow:active {
+        background-color: #FFDC00;
+    }
+
+    .BTNbutton--lime {
+        background-color: #01FF70;
+        box-shadow: 0 2px 0 #00cd5a;
+    }
+
+    .BTNbutton--lime:hover,
+    .BTNbutton--lime:focus {
+        background-color: #1bff7e;
+    }
+
+    .BTNbutton--lime:active {
+        background-color: #01FF70;
+    }
+
+    .BTNbutton--green {
+        background-color: #2ECC40;
+        box-shadow: 0 2px 0 #25a233;
+    }
+
+    .BTNbutton--green:hover,
+    .BTNbutton--green:focus {
+        background-color: #40d451;
+    }
+
+    .BTNbutton--green:active {
+        background-color: #2ECC40;
+    }
+
+    .BTNbutton--olive {
+        background-color: #3D9970;
+        box-shadow: 0 2px 0 #2e7555;
+    }
+
+    .BTNbutton--olive:hover,
+    .BTNbutton--olive:focus {
+        background-color: #44ab7d;
+    }
+
+    .BTNbutton--olive:active {
+        background-color: #3D9970;
+    }
+
+    .BTNbutton--teal {
+        background-color: #39CCCC;
+        box-shadow: 0 2px 0 #2ba7a7;
+    }
+
+    .BTNbutton--teal:hover,
+    .BTNbutton--teal:focus {
+        background-color: #4dd1d1;
+    }
+
+    .BTNbutton--teal:active {
+        background-color: #39CCCC;
+    }
+
+    .BTNbutton--aqua {
+        background-color: #7FDBFF;
+        box-shadow: 0 2px 0 #4ccdff;
+    }
+
+    .BTNbutton--aqua:hover,
+    .BTNbutton--aqua:focus {
+        background-color: #99e2ff;
+    }
+
+    .BTNbutton--aqua:active {
+        background-color: #7FDBFF;
+    }
+
+    .BTNbutton--blue {
+        background-color: #0074D9;
+        box-shadow: 0 2px 0 #0059a6;
+    }
+
+    .BTNbutton--blue:hover,
+    .BTNbutton--blue:focus {
+        background-color: #0082f3;
+    }
+
+    .BTNbutton--blue:active {
+        background-color: #0074D9;
+    }
+
+    .BTNbutton--purple {
+        background-color: #B10DC9;
+        box-shadow: 0 2px 0 #870a99;
+    }
+
+    .BTNbutton--purple:hover,
+    .BTNbutton--purple:focus {
+        background-color: #c60fe1;
+    }
+
+    .BTNbutton--purple:active {
+        background-color: #B10DC9;
+    }
+
+    .BTNbutton--fuchsia {
+        background-color: #F012BE;
+        box-shadow: 0 2px 0 #c30c9a;
+    }
+
+    .BTNbutton--fuchsia:hover,
+    .BTNbutton--fuchsia:focus {
+        background-color: #f22ac5;
+    }
+
+    .BTNbutton--fuchsia:active {
+        background-color: #F012BE;
+    }
+
+    .BTNbutton--maroon {
+        background-color: #85144B;
+        box-shadow: 0 2px 0 #590d32;
+    }
+
+    .BTNbutton--maroon:hover,
+    .BTNbutton--maroon:focus {
+        background-color: #9b1758;
+    }
+
+    .BTNbutton--maroon:active {
+        background-color: #85144B;
+    }
+
+    .BTNbutton--navy {
+        background-color: #001F3F;
+        box-shadow: 0 2px 0 #00060c;
+    }
+
+    .BTNbutton--navy:hover,
+    .BTNbutton--navy:focus {
+        background-color: #002c59;
+    }
+
+    .BTNbutton--navy:active {
+        background-color: #001F3F;
+    }
+
+    .BTNbutton--black {
+        background-color: #333;
+        box-shadow: 0 2px 0 #1a1a1a;
+    }
+
+    .BTNbutton--black:hover,
+    .BTNbutton--black:focus {
+        background-color: #404040;
+    }
+
+    .BTNbutton--black:active {
+        background-color: #333;
+    }
+
+    .BTNbutton--gray {
+        background-color: #888;
+        box-shadow: 0 2px 0 #6f6f6f;
+    }
+
+    .BTNbutton--gray:hover,
+    .BTNbutton--gray:focus {
+        background-color: #959595;
+    }
+
+    .BTNbutton--gray:active {
+        background-color: #888;
+    }
+
+    .BTNbutton--white {
+        background-color: #eee;
+        box-shadow: 0 2px 0 #d5d5d5;
+    }
+
+    .BTNbutton--white:hover,
+    .BTNbutton--white:focus {
+        background-color: #fbfbfb;
+    }
+
+    .BTNbutton--white:active {
+        background-color: #eee;
+    }
+
+    /* Make text dark on buttons that have light background-colors */
+    .BTNbutton--yellow,
+    .BTNbutton--lime,
+    .BTNbutton--aqua,
+    .BTNbutton--white {
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .BTNbutton--yellow:hover,
+    .BTNbutton--lime:hover,
+    .BTNbutton--aqua:hover,
+    .BTNbutton--white:hover {
+        color: rgba(0, 0, 0, 0.5);
+    }
+}

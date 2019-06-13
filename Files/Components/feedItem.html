@@ -1,36 +1,42 @@
 <div class="feedItem">
-    <div class="generic">
-        <div class="generic">
-            <button
-                class="button {{ PLATFORM_COLOR }} margin-right big shadow logged"
-                onclick="subscribePlatform('{{ SUBSCRIBE_PLATFORM }}')"
-            >
+	<div class="generic">
+		<div class="generic">
+			<a
+				class="button BTNbutton--small BTNbutton--{{ PLATFORM_COLOR }} {{ PLATFORM }} margin-right big shadow logged"
+				onclick="subscribePlatform('{{ SUBSCRIBE_PLATFORM }}')"
+			>
                 {{ PLATFORM_SUBSCRIBE_SIMBOL }}
-            </button>
-            <p class="feedItemPlatform">{{ PLATFORM }}</p>
-        </div>
-        <a href="{{ SOURCE }}" class="source shadow">Source</a>
-    </div>
-    <div class="line"></div>
-    <a href="{{ URL }}" class="feedItemDescription shadow">
-        {{ DESCRIPTION }}
-    </a>
-    <div class="generic">
-        <div class="generic mobile-btn">
-            <button
-                class="button {{ TYPE_COLOR }} shadow margin-right big mobile-btn"
-                onclick="subscribeType('{{ SUBSCRIBE_TYPE }}')"
-            >
-            {{ TYPE_SUBSCRIBE_SIMBOL }} {{ TYPE }}
-            </button>
-            <!-- <p class="feedItemType">{{TYPE}}</p> -->
-        </div>
-        <p class="feedItemDate big hidden-mobile">Date: {{ DATE }}</p>
-        <div class="generic hidden-mobile">
-            <button class="button {{ AUTHOR_COLOR }} margin-right big" onclick="subscribeAuthor('{{ SUBSCRIBE_AUTHOR }}')" >{{ AUTHOR_SUBSCRIBE_SIMBOL }}</button>
-            <p class="feedItemDate big ">
-                Author: {{ AUTHOR }}
-            </p>
-        </div>
-    </div>
+				{{ PLATFORM }}
+			</a>
+		</div>
+		<a href="{{ SOURCE }}" class="button big BTNbutton--small BTNbutton--blue source shadow">
+            <i class="fa fa-info-circle"></i>
+			Source
+		</a>
+	</div>
+	<div class="line"></div>
+	<a href="{{ URL }}" class="feedItemDescription shadow">
+		{{ DESCRIPTION }}
+	</a>
+	<div class="generic">
+		<div class="generic mobile-btn">
+			<a
+				class=" button BTNbutton--small BTNbutton--{{ TYPE_COLOR }} {{ TYPE }} margin-right big mobile-btn"
+				onclick="subscribeType('{{ SUBSCRIBE_TYPE }}')"
+			>
+                {{ TYPE_SUBSCRIBE_SIMBOL }}
+				{{ TYPE }}
+			</a>
+		</div>
+		<p class="feedItemDate big hidden-mobile">Date: {{ DATE }}</p>
+		<div class="generic hidden-mobile">
+			<a
+				class=" button BTNbutton--small BTNbutton--{{ AUTHOR_COLOR }} {{ AUTHOR }} margin-right big "
+				onclick="subscribeAuthor('{{ SUBSCRIBE_AUTHOR }}')"
+			>
+                {{ AUTHOR_SUBSCRIBE_SIMBOL }}
+				Author: {{ AUTHOR }}
+			</a>
+		</div>
+	</div>
 </div>

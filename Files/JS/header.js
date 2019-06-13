@@ -9,7 +9,6 @@ document.addEventListener(
 
 
 function getHeaderData(key) {
-	console.log("HeaderData!");
 	fetch("/GET/profile/header")
 		.then(function (response) {
 			return response.json();
@@ -32,9 +31,6 @@ function getHeaderData(key) {
 				}
 				document.getElementById("HEADER").innerHTML = txt;
 				dynamicallyLoadScript("/file../JS/dropdown.js");
-				/**TODO
-				 * ASYNC FUNCTION TO PROPERLY LAOD THE MENU'S
-				 */
 				dynamicallyLoadScript("/file../JS/headerMenu.js");
 			};
 			client.send();

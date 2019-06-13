@@ -14,12 +14,9 @@ function renderFilter() {
 			})
 			.then(function (myJson) {
 				subs = myJson.sub;
+				console.log(subs);//pt ca inca nu sa actualizat ... si ar trebui sa o fac manual ... 
 				dynamicallyLoadScript("/file../JS/filterList.js");
-				if (subs != undefined) {
-					dynamicallyLoadScript("/file../JS/subscriptionList.js");
-				} else {
-					document.getElementById("SUBTITLE").innerHTML = "";
-				}
+				dynamicallyLoadScript("/file../JS/subscriptionList.js");
 			})
 			.catch(res=>{
 				console.log("Exception > ",res)
