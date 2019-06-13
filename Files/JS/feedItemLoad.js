@@ -15,11 +15,10 @@ function subscribe(data, type) {
 				renderSubscriberList();
 
 				for (i = 0; i < document.getElementsByClassName(data).length; i++) {
-					console.log("class",document.getElementsByClassName(data)[i].className);
+					console.log("class", document.getElementsByClassName(data)[i].className);
 					document.getElementsByClassName(data)[i].classList.remove("BTNbutton--black");
 					document.getElementsByClassName(data)[i].classList.add("BTNbutton--green");
 				}
-
 			} else {
 				if (subs[type] === undefined) {
 					subs[type] = [];
@@ -27,11 +26,10 @@ function subscribe(data, type) {
 					renderSubscriberList();
 
 					for (i = 0; i < document.getElementsByClassName(data).length; i++) {
-						console.log("class",document.getElementsByClassName(data)[i].className);
+						console.log("class", document.getElementsByClassName(data)[i].className);
 						document.getElementsByClassName(data)[i].classList.remove("BTNbutton--black");
 						document.getElementsByClassName(data)[i].classList.add("BTNbutton--green");
 					}
-
 				} else {
 					//singurul caz in care pot avea dubluri  ...
 
@@ -48,7 +46,7 @@ function subscribe(data, type) {
 							renderSubscriberList();
 						}
 						for (i = 0; i < document.getElementsByClassName(data).length; i++) {
-							console.log("class",document.getElementsByClassName(data)[i].className);
+							console.log("class", document.getElementsByClassName(data)[i].className);
 							document.getElementsByClassName(data)[i].classList.remove("BTNbutton--black");
 							document.getElementsByClassName(data)[i].classList.add("BTNbutton--green");
 						}
@@ -56,7 +54,7 @@ function subscribe(data, type) {
 						// sunt abonat deci caut poz aia si o sterg
 
 						for (i = 0; i < document.getElementsByClassName(data).length; i++) {
-							console.log("class",document.getElementsByClassName(data)[i].className);
+							console.log("class", document.getElementsByClassName(data)[i].className);
 							document.getElementsByClassName(data)[i].classList.remove("BTNbutton--green");
 							document.getElementsByClassName(data)[i].classList.add("BTNbutton--black");
 						}
@@ -86,9 +84,10 @@ var start_at = 0;
 var old_at = 0;
 var globalItems;
 
-document.addEventListener(
-	"DOMContentLoaded",
-	function() {
+document.addEventListener("DOMContentLoaded", loadItems(), false);
+
+function loadItems() {
+	if (document.getElementsByClassName("mainBody")[0].scrollTop === 0) {
 		document.getElementById("feedList").innerHTML =
 			'<div class="loads-ring"><div></div><div></div><div></div><div></div></div>';
 		var client = new XMLHttpRequest();
@@ -123,14 +122,13 @@ document.addEventListener(
 								.replaceAll("{{ AUTHOR }}", items[x].Author)
 								.replaceAll("{{ SUBSCRIBE_AUTHOR }}", items[x].Author)
 								.replaceAll("{{ URL }}", "/item/" + items[x].url);
-							console.log(subs);
 
 							if (subs != undefined) {
 								if (subs.Platform === undefined) {
 									txt = txt.replace("{{ PLATFORM_COLOR }}", "black").replace("{{ PLATFORM_SUBSCRIBE_SIMBOL }}", "");
 								} else {
 									//nu e undefined si trebuie sa verific
-									if(subs.Platform.indexOf(items[x].Platform) === -1){
+									if (subs.Platform.indexOf(items[x].Platform) === -1) {
 										//neabonat => black
 										txt = txt.replace("{{ PLATFORM_COLOR }}", "black").replace("{{ PLATFORM_SUBSCRIBE_SIMBOL }}", "");
 									} else {
@@ -143,7 +141,7 @@ document.addEventListener(
 									txt = txt.replace("{{ TYPE_COLOR }}", "black").replace("{{ TYPE_SUBSCRIBE_SIMBOL }}", "");
 								} else {
 									//nu e undefined si trebuie sa verific
-									if(subs.Type.indexOf(items[x].Type) === -1){
+									if (subs.Type.indexOf(items[x].Type) === -1) {
 										//neabonat => black
 										txt = txt.replace("{{ TYPE_COLOR }}", "black").replace("{{ TYPE_SUBSCRIBE_SIMBOL }}", "");
 									} else {
@@ -156,7 +154,7 @@ document.addEventListener(
 									txt = txt.replace("{{ AUTHOR_COLOR }}", "black").replace("{{ AUTHOR_SUBSCRIBE_SIMBOL }}", "");
 								} else {
 									//nu e undefined si trebuie sa verific
-									if(subs.Author.indexOf(items[x].Author) === -1){
+									if (subs.Author.indexOf(items[x].Author) === -1) {
 										//neabonat => black
 										txt = txt.replace("{{ AUTHOR_COLOR }}", "black").replace("{{ AUTHOR_SUBSCRIBE_SIMBOL }}", "");
 									} else {
@@ -164,69 +162,11 @@ document.addEventListener(
 										txt = txt.replace("{{ AUTHOR_COLOR }}", "green").replace("{{ AUTHOR_SUBSCRIBE_SIMBOL }}", "");
 									}
 								}
-
 							} else {
 								txt = txt.replace("{{ PLATFORM_COLOR }}", "black").replace("{{ PLATFORM_SUBSCRIBE_SIMBOL }}", "");
 								txt = txt.replace("{{ TYPE_COLOR }}", "black").replace("{{ TYPE_SUBSCRIBE_SIMBOL }}", "");
 								txt = txt.replace("{{ AUTHOR_COLOR }}", "black").replace("{{ AUTHOR_SUBSCRIBE_SIMBOL }}", "");
 							}
-							// if (subs != undefined) {
-							// 	if (subs.Platform != undefined) {
-							// 		if (subs.Platform.indexOf(items[x].Platform) !== -1) {
-							// 			txt = txt
-							// 				.replace("{{ PLATFORM_COLOR }}", "green")
-							// 				.replace("{{ PLATFORM_SUBSCRIBE_SIMBOL }}", '<i class="fa fa-check"></i>');
-							// 		} else {
-							// 			txt = txt
-							// 				.replace("{{ PLATFORM_COLOR }}", "black")
-							// 				.replace("{{ PLATFORM_SUBSCRIBE_SIMBOL }}", "fa fa-info-circle");
-							// 		}
-							// 	} else {
-							// 		txt = txt
-							// 			.replace("{{ PLATFORM_COLOR }}", "black")
-							// 			.replace("{{ PLATFORM_SUBSCRIBE_SIMBOL }}", "");
-							// 	}
-							// 	if (subs.Type != undefined) {
-							// 		if (subs.Type.indexOf(items[x].Type) !== -1) {
-							// 			txt = txt
-							// 				.replace("{{ TYPE_COLOR }}", "green")
-							// 				.replace("{{ TYPE_SUBSCRIBE_SIMBOL }}", '<i class="fa fa-check"></i>');
-							// 		} else {
-							// 			txt = txt
-							// 				.replace("{{ TYPE_COLOR }}", "black")
-							// 				.replace("{{ TYPE_SUBSCRIBE_SIMBOL }}", "");
-							// 		}
-							// 	} else {
-							// 		txt = txt
-							// 			.replace("{{ TYPE_COLOR }}", "black")
-							// 			.replace("{{ TYPE_SUBSCRIBE_SIMBOL }}", '');
-							// 	}
-							// 	if (subs.Author != undefined) {
-							// 		if (subs.Author.indexOf(items[x].Author) !== -1) {
-							// 			txt = txt
-							// 				.replace("{{ AUTHOR_COLOR }}", "green")
-							// 				.replace("{{ AUTHOR_SUBSCRIBE_SIMBOL }}", '<i class="fa fa-check"></i>');
-							// 		} else {
-							// 			txt = txt
-							// 				.replace("{{ AUTHOR_COLOR }}", "black")
-							// 				.replace("{{ AUTHOR_SUBSCRIBE_SIMBOL }}", "");
-							// 		}
-							// 	} else {
-							// 		txt = txt
-							// 			.replace("{{ AUTHOR_COLOR }}", "black")
-							// 			.replace("{{ AUTHOR_SUBSCRIBE_SIMBOL }}", "");
-							// 	}
-							// } else {
-							// 	txt = txt
-							// 		.replace("{{ PLATFORM_COLOR }}", "black")
-							// 		.replace("{{ PLATFORM_SUBSCRIBE_SIMBOL }}", "");
-							// 	txt = txt
-							// 		.replace("{{ TYPE_COLOR }}", "black")
-							// 		.replace("{{ TYPE_SUBSCRIBE_SIMBOL }}", "");
-							// 	txt = txt
-							// 		.replace("{{ AUTHOR_COLOR }}", "black")
-							// 		.replace("{{ AUTHOR_SUBSCRIBE_SIMBOL }}", "");
-							// }
 						}
 						document.getElementById("feedList").innerHTML = txt;
 					}
@@ -236,6 +176,15 @@ document.addEventListener(
 				});
 		};
 		client.send();
-	},
-	false,
-);
+	} else { 
+		console.log(document.getElementsByClassName("mainBody")[0].scrollTop)
+	}
+}
+
+function gotoPage(page){
+	page--;
+	page = page*15;
+	start_at = parseInt(Object.keys(globalItems)[Object.keys(globalItems).length-1])-page;
+	loadItems();
+	start_at = 0;
+}
