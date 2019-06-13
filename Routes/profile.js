@@ -7,7 +7,6 @@ var profile = function(req, res) {
   if (req.url === "/profile/") {
     userData = auth.getData();
     var cookie = cookies.get(req);
-    console.log("profile.js : ***********PROFILE**********");
     if (
       (cookie === undefined || cookie.session === undefined) &&
       userData.session === undefined
@@ -27,32 +26,18 @@ var profile = function(req, res) {
         }
       });
       valid.then((response) => {
-        console.log("Profile.js : Done!", response);
         //response = true;
         userData = response;
         if (response != false) {
-          console.log("profile.js : Valid!");
-          console.log("profile.js : ***********PROFILE**********");
           res.writeHead(302, {
             'Location': '/profile/'+userData.userURL,
         });
-          // if (userData.session != undefined) {
-          //   res.writeHead(302, {
-          //     //"Set-Cookie": "session=" + userData.session,
-          //     "Content-Type": "text/html",
-          //     //'Location': '/profile/'+userData.userURL
-          //   });
-          // }
-          //console.log(userData);
-
           var myReadStream = fs.createReadStream(
-            __dirname + "\\..\\src/Profile/index.html",
+            __dirname + "\/..\/src/Profile/index.html",
             "utf8"
           );
           myReadStream.pipe(res);
         } else {
-          console.log("profile.js : Not valid!");
-          console.log("profile.js : ***********PROFILE**********");
           res.writeHead(302, {
             Location: "/auth/log"
           });
