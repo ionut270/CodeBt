@@ -19,7 +19,6 @@
   "homepage": "https://github.com/ionut270/BananaBit#readme",
   "dependencies": {
     "nodemon": "^1.18.11",
-    "puppeteer": "^1.14.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "firebase-admin": "^7.2.0"
