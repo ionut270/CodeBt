@@ -262,6 +262,7 @@
 }
 
 .button {
+    user-select: none;
     white-space: nowrap;
     color: #fff;
     text-shadow: none;

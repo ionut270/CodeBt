@@ -86,6 +86,8 @@ var globalItems;
 
 document.addEventListener("DOMContentLoaded", loadItems(), false);
 
+var globalPage = 1;
+
 function loadItems() {
 	if (document.getElementsByClassName("mainBody")[0].scrollTop === 0) {
 		document.getElementById("feedList").innerHTML =
@@ -168,8 +170,20 @@ function loadItems() {
 								txt = txt.replace("{{ AUTHOR_COLOR }}", "black").replace("{{ AUTHOR_SUBSCRIBE_SIMBOL }}", "");
 							}
 						}
-						document.getElementById("feedList").innerHTML = txt;
 					}
+					txt+='<div class="feedItem"><div class="pagination" style="margin: 0 auto;" >'
+					var startAt = globalPage - 6;
+					if(startAt< 1){
+						startAt = 1;
+					}
+					for(let i=startAt;i<=startAt+10;i++){
+						if(i === globalPage){
+							txt+='<a onclick="gotoPage('+i+')" class="paginated BTNbutton--red button" style="border-radius: 100%;width: 1em;height: 1em;padding: 1em;">'+i+'</a>'
+						} else 
+						txt+='<a onclick="gotoPage('+i+')" class="paginated BTNbutton--white button" style="border-radius: 100%;width: 1em;height: 1em;padding: 1em;">'+i+'</a>'
+					}
+					txt+='</div> </div>'
+					document.getElementById("feedList").innerHTML = txt;
 				})
 				.catch(res => {
 					console.log("Exception > ", res);
@@ -177,11 +191,15 @@ function loadItems() {
 		};
 		client.send();
 	} else { 
+		document.getElementsByClassName("mainBody")[0].scrollTop = 0;
+		loadItems();
 		console.log(document.getElementsByClassName("mainBody")[0].scrollTop)
 	}
 }
 
 function gotoPage(page){
+	console.log(page,"Going!");
+	globalPage = page;
 	page--;
 	page = page*15;
 	start_at = parseInt(Object.keys(globalItems)[Object.keys(globalItems).length-1])-page;

@@ -1,11 +1,37 @@
+@media (orientation: landscape) {
+    .pagination{
+        text-align: center;
+    }
+    .paginated{
+        margin: 1em;
+    }
 .mainBody{
     position: fixed;
     background-color: #fff6f8;
-    height: 100%;
+    height: calc( 100% - 3em );
     width:100%;
     display:flex;
     flex-wrap: nowrap;
     overflow-y: scroll;
+}
+}
+@media (orientation: portrait) {
+    .paginated{
+        margin: 1em;
+    }
+    .mainBody{
+        position: fixed;
+        background-color: #fff6f8;
+        height: calc( 100% - 7em );
+        width:100%;
+        display:flex;
+        flex-wrap: nowrap;
+        overflow-y: scroll;
+    }
+    .pagination{
+        font-size: 1em !important;
+        text-align: center;
+    }
 }
 #mainBody::-webkit-scrollbar {
     width: .5em;

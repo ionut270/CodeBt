@@ -138,6 +138,7 @@
         margin-top: 20px;
     }
     #filter {
+        z-index: 1;
         display:none;
         background-color: #fff;
         position: fixed;
