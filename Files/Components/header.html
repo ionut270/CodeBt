@@ -1,36 +1,38 @@
-<div class="menuUser"id="blackout"></div>
+<div class="menuUser" id="blackout"></div>
 <div id="header" onclick="changeHeaderMenu();">
 	<p id="headerLogo">codebt</p>
 
 	<div id="headerMenu" class="contain"></div>
-	<div class ="headerIconsFlex">
-	<div class = "notificationBell">
-	<svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true">
-			<path
-				fill-rule="evenodd"
-				d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"
-			></path>
-		</svg>
-	</div>
-	<div id="headerUserContain" class="headerUser contain2">
-		<div class="headerSigned">
-			<div class="headerUserIcon">
-				<div id="USERDROPDOWN"></div>
-				<img
-					onclick="userProfileTrigger();"
-					class="headerUserIconPng"
-					src="{{HEADTHUMBNAIL}}"
-					style="
+	<div class="headerIconsFlex">
+		<div class="notificationBell headerUser contain2" id="notificationBell" onclick="window.location.href='/notifications'">
+			<a aria-label="{{ NOTIFIED_MSG }}" class="{{ NOTIFIED }}">
+			<span class="unread"></span>
+			<svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true">
+				<path
+					fill-rule="evenodd"
+					d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"
+				></path>
+			</svg>
+			</a>
+		</div>
+		<div id="headerUserContain" class="headerUser contain2">
+			<div class="headerSigned">
+				<div class="headerUserIcon">
+					<div id="USERDROPDOWN"></div>
+					<img
+						onclick="userProfileTrigger();"
+						class="headerUserIconPng"
+						src="{{ HEADTHUMBNAIL }}"
+						style="
 					align-items: center;
 					align-content: center;
 					align-self: center;
 					display: flex;
-				"
-				/>
-				<div class="triangle"></div>
-				<!--Express provides a nice framework to teach node html servers about file systems, and routes, and streams, and pipes and the rest. Without express you need to teach the html server about your png files, and css, and js, etc, yourself.-->
+				"/>
+					<div class="triangle"></div>
+					<!--Express provides a nice framework to teach node html servers about file systems, and routes, and streams, and pipes and the rest. Without express you need to teach the html server about your png files, and css, and js, etc, yourself.-->
+				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 </div>

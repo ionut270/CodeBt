@@ -14,7 +14,7 @@ function change_filter() {
                 active = false;
             }
         } else {
-            console.log("click")
+            //console.log("click")
             if (active === false) {
                 document.getElementById("filter").style.display = "block";
                 active = true;
@@ -32,7 +32,7 @@ function change_filter() {
 function changeHeaderMenu() {
     const mq = window.matchMedia("(orientation: portrait)");
     if (mq.matches === true) {
-        console.log("header");
+        //console.log("header");
 
         active = false;
         if(document.getElementById("filter")!=null){
@@ -61,8 +61,8 @@ function changeHeaderMenu() {
 function userProfileTrigger() {
     const mq = window.matchMedia("(orientation: portrait)");
     if (mq.matches === true) {
-        console.log(profile);
-        console.log(activeHead);
+        //console.log(profile);
+        //console.log(activeHead);
         if (profile === false) {
             document.getElementById("menuUser").style.display = "block";
             profile = true;

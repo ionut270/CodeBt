@@ -1,0 +1,21 @@
+<div id="elementData" class="scroll" onload="PR.prettyPrint()">
+	<div id="elementInfo">
+		<p id="elementTitle">{{ TITLE }}</p>
+		<div role="none" class="divider"></div>
+		<div class="everythingButTitle">
+			<p id="elementPlatform">Platform: {{ PLATFORM }}</p>
+			<p id="elementPublished">Published: {{ DATE }}</p>
+			<p id="elementType">Type: {{ TYPE }}</p>
+			<p id="elementAuthor">Author: {{ AUTHOR }}</p>
+		</div>
+		<div role="none" class="divider"></div>
+	</div>
+	<div id="elementCode">
+			<pre class="prettyprint linenums:1"
+			style="word-wrap: break-word;white-space: pre-line;">
+			<code>
+			{{ DATA }}
+			</code>
+        </pre>
+	</div>
+</div>

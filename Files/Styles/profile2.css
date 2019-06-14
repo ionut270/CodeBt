@@ -278,7 +278,7 @@
     box-sizing: border-box;
   }
   .icoNested {
-    font-size: 4vw;
+    font-size: 2vw;
     padding-left: 24px;
     display: flex;
     flex-wrap: nowrap;

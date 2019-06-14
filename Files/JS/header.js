@@ -1,33 +1,30 @@
 document.addEventListener(
 	"DOMContentLoaded",
-	function () {
+	function() {
 		var output = parseCookie();
 		getHeaderData(output.session);
 	},
 	false,
 );
 
-
 function getHeaderData(key) {
 	fetch("/GET/profile/header")
-		.then(function (response) {
+		.then(function(response) {
 			return response.json();
 		})
-		.then(function (myJson) {
+		.then(function(myJson) {
 			var client = new XMLHttpRequest();
 			client.open("GET", "/file../Components/header.html");
-			client.onload = function () {
+			client.onload = function() {
 				var txt = "";
 				if (myJson.own) {
-					txt += client.responseText
-						.replace("{{HEADTHUMBNAIL}}", myJson.picture);
+					txt += client.responseText.replace("{{ HEADTHUMBNAIL }}", myJson.picture);
 					headerData = myJson;
 				} else {
-					txt += client.responseText
-						.replace("{{HEADTHUMBNAIL}}", "/file../user.png");
+					txt += client.responseText.replace("{{ HEADTHUMBNAIL }}", "/file../user.png");
 					headerData = {
 						username: "Guest",
-					}
+					};
 				}
 				document.getElementById("HEADER").innerHTML = txt;
 				dynamicallyLoadScript("/file../JS/dropdown.js");
@@ -35,8 +32,47 @@ function getHeaderData(key) {
 			};
 			client.send();
 		})
-		.catch(res=>{
-			console.log("Exception > ",res)
+		.catch(res => {
+			console.log("Exception > ", res);
+		});
+}
+loadNot();
+function loadNot() {
+	fetch("/GET/profile/header")
+		.then(function(response) {
+			return response.json();
+		})
+		.then(function(myJson) {
+			if (window.location.href.indexOf("/notifications") === -1) {
+				fetch("/GET/Notifications")
+					.then(res => {
+						return res.json();
+					})
+					.then(res => {
+						console.log(res);
+						console.log(document.getElementById("notificationBell").innerHTML);
+						if (res != undefined && res != null) {
+							document.getElementById("notificationBell").innerHTML = document
+								.getElementById("notificationBell").innerHTML
+								.replace("{{ NOTIFIED }}", "link_to_notify")
+								.replace("{{ NOTIFIED_MSG }}", "You have notifications!");
+						} else {
+							document.getElementById("notificationBell").innerHTML = document
+							.getElementById("notificationBell").innerHTML
+							.replace("{{ NOTIFIED }}", "")
+							.replace("{{ NOTIFIED_MSG }}", "You no have notifications!");
+						}
+						// if (res != undefined && res != null) {
+						// 	txt = txt
+						// 		.replace("{{ NOTIFIED }}", "link_to_notify")
+						// 		.replace("{{ NOTIFIED_MSG }}", "You have notifications!");
+						// 	document.getElementById("HEADER").innerHTML = txt;
+						// } else {
+						// 	txt = txt.replace("{{ NOTIFIED }}", "").replace("{{ NOTIFIED_MSG }}", "");
+						// 	document.getElementById("HEADER").innerHTML = txt;
+						// }
+					});
+			}
 		});
 }
 
@@ -49,7 +85,7 @@ function dynamicallyLoadScript(url) {
 function parseCookie() {
 	var output = {};
 	if (document.cookie != undefined) {
-		document.cookie.split(/\s*;\s*/).forEach(function (pair) {
+		document.cookie.split(/\s*;\s*/).forEach(function(pair) {
 			pair = pair.split(/\s*=\s*/);
 			output[pair[0]] = pair.splice(1).join("=");
 		});

@@ -14,7 +14,7 @@ function renderFilter() {
 			})
 			.then(function (myJson) {
 				subs = myJson.sub;
-				console.log(subs);//pt ca inca nu sa actualizat ... si ar trebui sa o fac manual ... 
+				//console.log(subs);//pt ca inca nu sa actualizat ... si ar trebui sa o fac manual ... 
 				dynamicallyLoadScript("/file../JS/filterList.js");
 				dynamicallyLoadScript("/file../JS/subscriptionList.js");
 			})

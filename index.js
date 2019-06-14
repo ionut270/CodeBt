@@ -15,6 +15,18 @@ const server = http.createServer((req, res) => {
     feed.feed(req, res);
   } else if (req.url === "/feed") {
     feed.feed(req, res);
+  } else if(req.url === "/notifications"){
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    var myReadStream = fs.createReadStream(__dirname + '/src/notify/index.html', 'utf8');
+    //console.log(myReadStream);
+    myReadStream.pipe(res);
+  } else if(req.url === "/security_tips"){
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    var myReadStream = fs.createReadStream(__dirname + '/src/security_tips/index.html', 'utf8');
+    //console.log(myReadStream);
+    myReadStream.pipe(res);
   } else if (req.url.indexOf("/item/") != -1) {
     itemPage.itemPage(req, res);
   } else if (req.url.indexOf("/profile/") != -1) {

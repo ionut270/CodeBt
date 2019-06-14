@@ -1,3 +1,25 @@
+function categoryData(data,type){
+	/**Fac un request care imi va returna o lista doar cu itemele din categoria asta */
+	// console.log(data,type);
+	fetch("/GET/categoryData",{
+		headers:{
+			category:data,
+			type:type,
+			startAt: 0
+		}
+	})
+	.then(res=>{
+		return res.json();
+	})
+	.then(res=>{
+		//apelez functia mama
+		loadItemsCategory(res);
+		//console.log(res);
+	})
+	.catch(res=>{
+		console.log("Eception > ",res);
+	})
+}
 function renderSubscriberList() {
 	var txt = "";
 	if (subs === undefined) {
@@ -19,7 +41,7 @@ function renderSubscriberList() {
 					} else if (type[i] === "Author") {
 						txt += '<img class="bookmark" src="/file../user.png" />';
 					}
-					txt += '<button class="className button noStyle">' + decodeURI(subs[type[i]][j]) + "</button>";
+					txt += `<button class="className button noStyle" onclick="categoryData('`+subs[type[i]][j]+`','`+type[i]+`')">` + decodeURI(subs[type[i]][j]) + "</button>";
 					txt += "</div>";
 				}
 			}

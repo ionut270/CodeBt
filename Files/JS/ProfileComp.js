@@ -11,11 +11,11 @@ var subs = {}
 function requestUserData(key) {
   fetch("/GET/profile/default")
   .then(function(response) {
-      console.log("RESPONSE:",response);
+     // console.log("RESPONSE:",response);
       return response.json();
   })
   .then(function(myJson) {
-    console.log("OBJ:",myJson);
+    // console.log("OBJ:",myJson);
     var client = new XMLHttpRequest();
     client.open("GET", "/file../Components/profile.html");
     client.onreadystatechange = function() {
