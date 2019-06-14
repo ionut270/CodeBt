@@ -100,6 +100,8 @@ Notificarile se genereaza al nivel de server cand utilizatorul este online.
 Cand acesta este online si aceseaza un url, se adauga in baza de date la profiilul lui ca a vizitat urlul respectiv.
 Suplimentar cand un utilizar se se aboneaza la o categorie se adauga in baza de date o proprietate specifica fiecarei categorii de lastSeen: care specifica ultimul item din baza de date corespunzator categoriei respective la care te-ai abonat
 
+![alt text](https://i.ibb.co/FDWDTbf/item-view.jpg)
+
 Serverul se foloseste de aceste date pentru a face o serie de queriuri returnand idurile taskurilor carte nu se afla in lista de vizitate si sunt mai recente decat acel lastSeen.
 
 
