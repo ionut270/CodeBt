@@ -85,6 +85,8 @@ Partea de parsare a modulului va fi insa doar o functie, ce primeste ca parametr
  
 Modul de autentificare, trimite la server un obiect cu datele necesare pentru validare, si returneaza inapoi un obiect cu erori, si un obiect ce contin date despre utilizator daca datele sunt corecte. Acest lucru se va intampla atat pentru login cat si pentru register. Datele necesare validarii de afla in diagrama uml.
 
+![alt text](https://i.ibb.co/CHQ6jm2/Auht.jpg)
+
 **3. Search - 50%**
  
 Modulul va primi un string pe care il va parsa intro lista de cuvinte, ce vor fi comparate cu date relevante ale obiectelor din baza de date. Obiectele care au cat mai multe similaritati cu stringul initial primit vor fi returnate primele, urmand mai apoi ca obiectele cu mai putine similaritati sa fie returnate mai la final. Obiectele fara date similare vor fi omise, pentru a nu incurca utilizatorul.
@@ -101,7 +103,7 @@ Modulul serveste fisiere statice utilizatorului, fisiere aflate pe server ( ex :
 modulul foloseste modulul 'fs' deja prezent in nodejs ce ofera utilizatorului functii de citire si editare a fisierelor.
 
 
-**4. Subscribe 90%**
+**4. Subscribe 100%**
  
 Modulul va trimite nortificari utilizatorului la adaugarea obiectelor noi in baza de date care corespun unor criterii la care acesta este abonat. 
 
@@ -145,3 +147,16 @@ uzual, va apela un model conform acțiunii solicitate
 și, apoi, va selecta un view corespunzător
 
 
+Logică
+Pentru o aplicație web ușoara este necesar să stabilim următoarele elemente:
+
+O bază (CMV)
+Controlor - acesta trebuie să fie capabil de a manipula rute, fișiere, clase, metode și funcții
+Model - este asemănător unui script obișnuit într-un server, doar că regrupat sub un model reutilizabil.
+Vizualizare - asemănător includerii unui fișier în aplicația noastră.
+Un sistem
+Router - cu el putem împărți cerințele noastre fără multe condiționale
+Incărcător (Loader)
+
+
+# API
