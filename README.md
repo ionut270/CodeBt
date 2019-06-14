@@ -160,3 +160,35 @@ Incărcător (Loader)
 
 
 # API
+
+Cererea de brense de securitate se realizeaza la /GET/items
+Requestul are nevoie de date scrise in header
+
+start_at : pozitia cu care se incepe returnarea datelor ( 0 , cel mai recent ) 
+Poate fi lfolosit la paginare, prin retinerea idului ultimului item din pagina.
+
+
+Pentru a obtine date specifice despre un singur item se poate folosi /GET/itemInfo
+Acesta nu are nevoie de parametrii suplimentari
+
+# Structura in firebase
+```
+{
+  "Author" : "KnocKout",
+  "Date" : "2009-06-17",
+  "Platform" : "PHP",
+  "Title" : "PHPortal 1.0 - Insecure Cookie Handling",
+  "Type" : "webapps",
+  "details" : "########################################################\nPhpPortal v1 Insecure Cookie Handling Vulnerability\n######################################################## Author : KnocKout\nSpecial Thankz : CW All users\nScript : http://phportal.mertindualari.com ######################################################## Exploit; javascript:document.cookie=\"kulladi=[Username];path=/\";\nEnter.. Go To; http://target.com/uye_paneli.php?islem=bilgilerim ######################################################## # milw0rm.com [2009-06-17] ",
+  "index" : "8981",
+  "language" : "txt",
+  "url" : "exploits/8981"
+}
+```
+
+Fiecare item are cate un index ( id ) care il are stocat si ca si cheie.
+Cheile sunt stocate incepand de la 0 spre minus infinit datorita modului de functionare al firebaseului cum nu poate returna date in ordine inversa.
+
+
+
+
