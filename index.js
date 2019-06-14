@@ -42,6 +42,7 @@ const server = http.createServer((req, res) => {
     );
     myReadStream.pipe(res);
   } else if (req.url === "/reg") {
+    console.log("Register!");
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/html");
     var myReadStream = fs.createReadStream(

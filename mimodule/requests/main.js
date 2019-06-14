@@ -52,7 +52,15 @@ function getNotifications(req, res) {
 	var Types = [];
 	var Authors = [];
 	var cookie = cookies.parse(req.headers.cookie);
-	var uid = cookie.session.split(/{{/)[1].split(/}}/)[0];
+	var uid;
+	if(cookie === undefined){
+		cookie="";
+		cookie["session"]="none";
+		uid = -1;
+		res.end();
+	} else { 
+		uid = cookie.session.split(/{{/)[1].split(/}}/)[0];
+	}
 	var ref = admin.database().ref("/auth/users/Users/" + uid + "/sub/Platform");
 	ref.once("value").then(snap => {
 		Platforms = snap.val();

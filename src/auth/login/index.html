@@ -1,27 +1,46 @@
 <html>
-    <head>
-        <script>
-            console.log("Running!");
-            fetch("/test")
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(function(myJson) {
-                    console.log("did not ... Worked!");
-                    console.log(JSON.stringify(myJson));
-                });
-        </script>
-    </head>
-    <body>
-        <h1>LOGIN</h1>
-        <form method="POST" name="LOGIN">
-            username:<br />
-            <input type="text" name="username" />
-            <br />
-            password:<br />
-            <input type="password" name="password" />
-            <br /><br />
-            <input type="submit" value="Submit" />
-        </form>
-    </body>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="/file../Styles/login.css" />
+        
+        		<link href="https://fonts.googleapis.com/css?family=Barlow|Teko" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/file../Styles/header.css" />
+		<link rel="stylesheet" type="text/css" href="/file../Styles/body.css" />
+		<link rel="stylesheet" type="text/css" href="/file../Styles/filter.css" />
+		<link rel="stylesheet" type="text/css" href="/file../Styles/feed-Element.css" />
+		<link rel="stylesheet" type="text/css" href="/file../Styles/buttons.css" />
+	</head>
+	<body>
+        <div class="page">
+                <div class="subPage">
+                    <div id='logo'>
+                        <span>
+                            <div class="logo_txt">
+                                <p id="headerLogo" class="centeredBigLogin" style="
+                                text-align: center;
+                                font-size: 12vw;
+                                padding: 0px;
+                            ">codebt</p>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="login_forum">
+                        <div class="top">
+                            <div class="login">LOGIN</div>
+                            <div class="eula">By logging in you agree to the ridiculously long terms that you didn't bother to
+                                read
+                            </div>
+                        </div>
+                        <div class="container">
+                            <form method="POST" name="LOGIN" class="form">
+                                <div id="username"><input type="text" name="username" placeholder="Username"></div>
+                                <input type="password" name="password" placeholder="Password">
+                                <button type="submit" value="Submit" id="login-button">SUBMIT</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	</body>
 </html>

@@ -1,0 +1,446 @@
+@media (orientation: landscape) {
+    html,
+    body {
+        background: url(https://subtlepatterns.com/patterns/sativa.png) repeat fixed;
+        font-family: 'Lato', sans-serif;
+    }
+    .page{
+    }
+    .subPage{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #img-logo {
+        position: relative;
+        z-index: 2;
+        display: block;
+        margin: 0 auto;
+        height: 30%;
+        padding-bottom: 2.5em;
+        animation-name: intro;
+        animation-duration: 2s;
+        transform: scale(1);
+    }
+    @keyframes intro {
+        0% {
+            transform: translateY(100%) scale(2);
+            transition: transform 300ms linear;
+            will-change: transform;
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    #logo-text {
+        position: relative;
+        z-index: 1;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        text-align: center;
+        font: 4em/1 "Oswald", sans-serif;
+        display: block;
+        margin: 0 auto;
+        text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+        background: url(https://i.imgur.com/I3os0nV.png) repeat-y;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: aitf 80s linear infinite;
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+    }
+    .logo_txt{
+        animation-name: logo_txt_a;
+        animation-duration: 2s;
+    }
+    @keyframes logo_txt_a {
+        from {
+            transform: translateY(50%) scale(0);
+            transition: transform 300ms linear;
+            will-change: transform;
+        }
+        to {
+        }
+    }
+    @-webkit-keyframes aitf {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+    .container {
+        box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
+        max-width: 500px;
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 0%;
+        height: 12em;
+        text-align: center;
+        background-color: #ff5252;
+        border-radius: 8px;
+    }
+    form input {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 450px;
+        border-radius: 3px;
+        padding: 10px 15px;
+        margin: 0 auto 10px auto;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: white;
+        transition-duration: 0.25s;
+        font-weight: 300;
+    }
+    form input:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    form input:focus {
+        background-color: white;
+        width: 480px;
+        color: #ff5252;
+    }
+    #username {
+        padding-top: 1.5em;
+    }
+    form button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        background-color: white;
+        border: 0;
+        padding: 10px 15px;
+        color: #ff5252;
+        border-radius: 3px;
+        width: 450px;
+        cursor: pointer;
+        font-size: 18px;
+        transition-duration: 0.25s;
+    }
+    form button:hover {
+        background-color: #f5f7f9;
+    }
+    .top {
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+        font-style: bold;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 450px;
+        margin-top: 3em;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .top:hover {
+        background-color: rgba(255, 255, 255, 1);
+        width: 490px;
+        animation-name: hover;
+        animation-duration: .1s;
+    }
+    @keyframes hover {
+        from {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 450px;
+        }
+        to {
+            background-color: rgba(255, 255, 255, 1);
+            width: 490px;
+        }
+    }
+    .top:hover .eula {
+        animation-name: eula;
+        animation-duration: .1s;
+        transform:scale(1.5);
+    }
+    .top:hover .login {
+        animation-name: login;
+        animation-duration: .1s;
+        transform:scale(0.8);
+    }
+    @keyframes eula {
+        from {
+            
+        }
+        to {
+            transform:scale(1.5);
+            transition: transform 300ms linear;
+            will-change: transform;
+        }
+    }
+    @keyframes login {
+        from {
+        }
+        to {
+            transform:scale(0.8);
+            transition: transform 300ms linear;
+            will-change: transform;
+        }
+    }
+    .login {
+        position: relative;
+        font-family: "Oswald", sans-serif;
+        font-size: 2em;
+    }
+    .eula {
+        position: relative;
+        font-family: 'Lato', sans-serif;
+        font-size: .5em;
+        padding-bottom: 1em;
+    }
+    .login_forum{
+        animation-name: forum;
+        animation-duration: 2s;
+    }
+    @keyframes forum {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%) scale(.5);
+            transition: transform 300ms linear;
+            will-change: transform;
+        }
+        30%{
+            opacity: 0;
+        }
+        100% {
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    html,
+    body {
+        background: url(https://subtlepatterns.com/patterns/sativa.png) repeat fixed;
+        font-family: 'Lato', sans-serif;
+    }
+    .page{
+    }
+    .subPage{
+        width:100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #img-logo {
+        position: relative;
+        z-index: 2;
+        display: block;
+        margin: 0 auto;
+        width: 30em;
+        padding-bottom:4em;
+        animation-name: intro;
+        animation-duration: 2s;
+        transform: scale(1);
+    }
+    @keyframes intro {
+        0% {
+            transform: translateY(100%) scale(2);
+            transition: transform 300ms linear;
+            will-change: transform;
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    #logo-text {
+        position: relative;
+        z-index: 1;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        text-align: center;
+        font: 9em/1 "Oswald", sans-serif;
+        display: block;
+        margin: 0 auto;
+        text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+        background: url(https://i.imgur.com/I3os0nV.png) repeat-y;
+        background-size: 119em;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: aitf 80s linear infinite;
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+    }
+    .logo_txt{
+        animation-name: logo_txt_a;
+        animation-duration: 2s;
+    }
+    @keyframes logo_txt_a {
+        from {
+            transform: translateY(50%) scale(0);
+            transition: transform 300ms linear;
+            will-change: transform;
+        }
+        to {
+        }
+    }
+    @-webkit-keyframes aitf {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+    .container {
+        box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
+        width: 90%;
+        height: 35em;
+        margin: 0 auto;
+        margin-top: 0%;
+        text-align: center;
+        background-color: #ff5252;;
+        border-radius: 8px;
+    }
+    form input {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 90%;
+        border-radius: 10px;
+        padding: 40px 15px;
+        margin: 0 auto .5em auto;
+        display: block;
+        text-align: center;
+        font-size: 3em;
+        color: white;
+        transition-duration: 0.25s;
+        font-weight: 300;
+    }
+    form input:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    form input:focus {
+        background-color: white;
+        width: 95%;
+        color: #ff5252;
+    }
+    #username {
+        padding-top: 3em;
+    }
+    form button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        background-color: white;
+        border: 0;
+        padding: 40px 15px;
+        color: #ff5252;
+        border-radius: 3px;
+        width: 90%;
+        cursor: pointer;
+        font-size: 3em;
+        font-weight: 200;
+        transition-duration: 0.25s;
+    }
+    form button:hover {
+        background-color: #f5f7f9;
+    }
+    .top {
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+        font-style: bold;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 85%;
+        margin-top: 4em;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .top:hover {
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+        font-style: bold;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 1);
+        width: 87%;
+        margin-top: 3em;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        animation: hover 1s;
+    }
+    @keyframes hover {
+        from {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 85%;
+        }
+        to {
+            background-color: rgba(255, 255, 255, 1);
+            width: 87%;
+        }
+    }
+    .login {
+        position: relative;
+        font-family: "Oswald", sans-serif;
+        font-size: 4em;
+    }
+    .top:hover .login{
+        position: relative;
+        font-family: "Oswald", sans-serif;
+        font-size: 2.3em;
+        animation: login 1s;
+    }
+    @keyframes login {
+        0%{
+            font-size: 4em;
+        }
+        100%{
+            font-size: 2.3em;
+        }
+    }
+    .eula {
+        position: relative;
+        font-family: 'Lato', sans-serif;
+        font-size: .5em;
+        padding-bottom: 1em;
+    }
+    .top:hover .eula{
+        position: relative;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.4em;
+        padding-bottom: 1em;
+        animation: eula 1s;
+    }
+    @keyframes eula {
+        0%{
+            font-size: .5em;
+        }
+        100%{
+            font-size: 1.4em;
+        }
+    }
+    .login_forum{
+        animation-name: forum;
+        animation-duration: 2s;
+    }
+    @keyframes forum {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%) scale(.5);
+            transition: transform 300ms linear;
+            will-change: transform;
+        }
+        30%{
+            opacity: 0;
+        }
+        100% {
+        }
+    }
+}
