@@ -9,7 +9,7 @@ function validate(key) {
   //console.log("\tvalidate-key.js : ***********VALIDATE**********");
   //userData = auth.getData();
   //console.log("Key is :",key)
-  if (key === undefined) {
+  if (key === undefined || key === 'undefined') {
     //console.log("\tThere is not cookie session id but validate was launched!");
     return false;
   } else {

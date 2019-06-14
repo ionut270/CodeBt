@@ -1,31 +1,31 @@
 var type = [
   {
-    name: "Dos"
+    name: "dos"
   },
   {
-    name: "Local"
+    name: "local"
   },
   {
-    name: "Remote"
+    name: "remote"
   },
   {
-    name: "Shellcode"
+    name: "shellcode"
   },
   {
-    name: "Papers"
+    name: "papers"
   },
   {
-    name: "Webapps"
+    name: "webapps"
   }
 ];
 
 var output = document.getElementById("TYPES");
 var txt = "";
 for (x in type) {
-  //console.log(type[x]);
+  console.log(type[x]);
   txt += '<div class="icoNested">';
-  txt +='<img class="bookmark" src="http://icons.iconarchive.com/icons/iconsmind/outline/256/Bookmark-icon.png">'
-  txt += '<div class="className">' + type[x].name + "</div>";
+  txt +='<img class="bookmark" src="http://icons.iconarchive.com/icons/iconsmind/outline/256/Bookmark-icon.png" >'
+  txt += `<div class="className" onclick="categoryData('`+type[x].name+`','Type')">` + type[x].name + "</div>";
   txt += '</div>';
 }
 document.getElementById("TYPES").innerHTML = txt;

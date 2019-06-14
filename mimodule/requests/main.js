@@ -53,12 +53,17 @@ function getNotifications(req, res) {
 	var Authors = [];
 	var cookie = cookies.parse(req.headers.cookie);
 	var uid;
-	if(cookie === undefined){
-		cookie="";
-		cookie["session"]="none";
+	if (
+		cookie === undefined ||
+		cookie === "undefined" ||
+		cookie.session === undefined ||
+		cookie.session === "undefined"
+	) {
+		cookie = "";
+		cookie["session"] = "none";
 		uid = -1;
 		res.end();
-	} else { 
+	} else {
 		uid = cookie.session.split(/{{/)[1].split(/}}/)[0];
 	}
 	var ref = admin.database().ref("/auth/users/Users/" + uid + "/sub/Platform");
@@ -204,14 +209,13 @@ function getNotifications(req, res) {
 						});
 					}
 				}
-				setTimeout(()=>{
+				setTimeout(() => {
 					//console.log(notification_Author,notification_Platform,notification_Type);
-					var to_res = '{ "Platform":'+JSON.stringify(notification_Platform);
-					to_res+=',"Type":'+JSON.stringify(notification_Type);
-					to_res+=',"Author":'+JSON.stringify(notification_Author) + '}';
+					var to_res = '{ "Platform":' + JSON.stringify(notification_Platform);
+					to_res += ',"Type":' + JSON.stringify(notification_Type);
+					to_res += ',"Author":' + JSON.stringify(notification_Author) + "}";
 					res.end(to_res);
-
-				},1000)
+				}, 1000);
 			});
 		});
 	});
@@ -597,51 +601,61 @@ function headerData(req, res) {
 }
 
 function getItemInfo(req, res) {
-	var user_db_id = req.headers.cookie
-		.split(/session=/)[1]
-		.split(/{{/)[1]
-		.split(/}}/)[0];
-	if (req.headers.itemid != undefined) {
-		//console.log(req.headers.itemid);
-		var ref = admin.database().ref("/items/" + req.headers.itemid);
-		//console.log("/items/" + req.headers.itemid);
-		ref
-			.once("value")
-			.then(function(snap) {
-				//console.log(snap.val())
-				res.end(JSON.stringify(snap.val()));
-				var dbdata = snap.val();
-				ref = admin.database().ref("/auth/users/Users/" + user_db_id + "/Seen/Platform/" + dbdata.Platform);
+	if (req.headers != undefined && req.headers.cookie != undefined) {
+		var user_db_id = req.headers.cookie
+			.split(/session=/)[1]
+			.split(/{{/)[1]
+			.split(/}}/)[0];
+		if (req.headers.itemid != undefined) {
+			var ref = admin.database().ref("/items/" + req.headers.itemid);
+			ref
+				.once("value")
+				.then(function(snap) {
+					//console.log(snap.val())
+					res.end(JSON.stringify(snap.val()));
+					var dbdata = snap.val();
+					ref = admin.database().ref("/auth/users/Users/" + user_db_id + "/Seen/Platform/" + dbdata.Platform);
 
-				ref
-					.orderByChild("/id")
-					.equalTo(dbdata.index)
-					.once("value")
-					.then(snap => {
-						if (snap.val() === null) {
-							ref = admin.database().ref("/auth/users/Users/" + user_db_id + "/Seen/Platform/" + dbdata.Platform);
-							ref.once("value").then(snap => {
-								ref.push({ id: dbdata.index });
-
-								ref = admin.database().ref("/auth/users/Users/" + user_db_id + "/Seen/Type/" + dbdata.Type);
+					ref
+						.orderByChild("/id")
+						.equalTo(dbdata.index)
+						.once("value")
+						.then(snap => {
+							if (snap.val() === null) {
+								ref = admin.database().ref("/auth/users/Users/" + user_db_id + "/Seen/Platform/" + dbdata.Platform);
 								ref.once("value").then(snap => {
 									ref.push({ id: dbdata.index });
 
-									ref = admin.database().ref("/auth/users/Users/" + user_db_id + "/Seen/Author/" + dbdata.Author);
+									ref = admin.database().ref("/auth/users/Users/" + user_db_id + "/Seen/Type/" + dbdata.Type);
 									ref.once("value").then(snap => {
 										ref.push({ id: dbdata.index });
+
+										ref = admin.database().ref("/auth/users/Users/" + user_db_id + "/Seen/Author/" + dbdata.Author);
+										ref.once("value").then(snap => {
+											ref.push({ id: dbdata.index });
+										});
 									});
 								});
-							});
-						}
-					});
-			})
-			.catch(Response => {
-				console.log("Exception > ", Response);
-				res.end("There are no informations about such an exploit!");
-			});
+							}
+						});
+				})
+				.catch(Response => {
+					console.log("Exception > ", Response);
+					res.end("There are no informations about such an exploit!");
+				});
+		} else {
+			res.end("There are no informations about such an exploit!");
+		}
 	} else {
-		res.end("There are no informations about such an exploit!");
+		if (req.headers.itemid != undefined) {
+			var ref = admin.database().ref("/items/" + req.headers.itemid);
+			ref.once("value").then(function(snap) {
+				//console.log(snap.val())
+				res.end(JSON.stringify(snap.val()));
+			});
+		} else {
+			res.end("There are no informations about such an exploit!");
+		}
 	}
 }
 

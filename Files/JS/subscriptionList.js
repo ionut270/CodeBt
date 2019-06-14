@@ -1,4 +1,5 @@
 function categoryData(data,type){
+	console.log(data,type)
 	/**Fac un request care imi va returna o lista doar cu itemele din categoria asta */
 	// console.log(data,type);
 	fetch("/GET/categoryData",{
